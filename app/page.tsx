@@ -1,5 +1,11 @@
 "use client";
 
+import NavbarPage from "../components/NavbarPage";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <NavbarPage />
+    </main>
+  );
 }
