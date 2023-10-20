@@ -12,11 +12,11 @@ import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
-  DropdownSection,
   DropdownItem,
 } from "@nextui-org/react";
 import { ChevronDown } from "./Icons";
 import { AcmeLogo } from "./AcmeLogo";
+import { RxDotsVertical } from "react-icons/rx";
 
 export default function App() {
   const menuItems = [
@@ -31,6 +31,7 @@ export default function App() {
 
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
+    rxdots: <RxDotsVertical fill="currentColor" size={16} />,
   };
 
   return (
@@ -46,10 +47,8 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        
         <NavbarBrand>
           <AcmeLogo />
-          
         </NavbarBrand>
         <NavbarItem>
           <Link className="text-white hover:text-primary-500" href="#">
@@ -81,14 +80,8 @@ export default function App() {
             <DropdownItem key="edit">Electricidad automotriz</DropdownItem>
             <DropdownItem key="edit">Latoneria y pintura</DropdownItem>
             <DropdownItem key="edit">Servicios Especiales</DropdownItem>
-            
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem>
-          <Link href="#" className="text-white hover:text-primary-500">
-            Nosotros
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Link className="text-white hover:text-primary-500" href="#">
             Blog
@@ -101,6 +94,31 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
 
+      <Dropdown>
+        <NavbarItem>
+          <DropdownTrigger>
+            <Button
+              disableRipple
+              className="p-0 bg-transparent data-[hover=true]:bg-transparent text-white hover:text-primary-500 w-[30px]"
+              endContent={icons.rxdots}
+              size="sm"
+            >
+              {/* dasdas */}
+            </Button>
+          </DropdownTrigger>
+        </NavbarItem>
+        <DropdownMenu
+          aria-label="ACME features"
+          className="w-[180px]"
+          itemClasses={{
+            base: "gap-4",
+          }}
+        >
+          <DropdownItem key="new">Nosotros</DropdownItem>
+          <DropdownItem key="copy">Trabaja con nosotros</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#" className="text-white hover:text-primary-500">
@@ -108,7 +126,12 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} className="text-white bg-primary-700 " href="#" variant="flat">
+          <Button
+            as={Link}
+            className="text-white bg-primary-700 "
+            href="#"
+            variant="flat"
+          >
             Crear cuenta
           </Button>
         </NavbarItem>
