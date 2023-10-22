@@ -1,11 +1,28 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
+import * as z from "zod";
+
+const FormSchema = z
+  .object({
+    username: z.string().min(1, 'Username is required').max(100),
+    email: z.string().min(1, 'Email is required').email('Invalid email'),
+    password: z
+      .string()
+      .min(1, 'Password is required')
+      .min(8, 'Password must have than 8 characters'),
+    confirmPassword: z.string().min(1, 'Password confirmation is required'),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ['confirmPassword'],
+    message: 'Password do not match',
+  });
+
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { username, email, password } = body;
+    const { email, username, password } = body;
 
     // Check if email already exists
     const existingUserByEmail = await db.user.findUnique({
@@ -43,6 +60,20 @@ export async function POST(req: Request) {
         password: hashedPassword,
       },
     });
-    return NextResponse.json(body);
-  } catch (error) {}
+
+    return NextResponse.json(
+      {
+        user: newUser,
+        message: "User created successfully",
+      },
+      { status: 201 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      {
+        message: "Something went wrong!",
+      },
+      { status: 500 }
+    );
+  }
 }
