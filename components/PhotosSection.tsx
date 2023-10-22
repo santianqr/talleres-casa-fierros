@@ -15,14 +15,14 @@ const PhotosSection: NextPage = () => {
             <div className="relative w-full flex-shrink-0" key={i}>
               <Image
                 src={src}
-                className="object-cover"
+                className="object-cover "
                 alt="alt"
                 sizes="100vw"
                 style={{
                   objectFit: "cover",
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent"></div>
             </div>
           );
         })}
