@@ -6,12 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 
 const FormSchema = z.object({
-  username: z.string().min(1, "Username is required").max(100),
-  email: z.string().min(1, "Email is required").email("Invalid email"),
-  password: z
+  name: z.string().min(1, "El nombre es obligatorio").max(100),
+  lastname: z.string().min(1, "El apellido es obligatorio").max(100),
+  citizenId: z.string().min(1, "La cédula es obligatoria").max(100),
+  email: z
     .string()
-    .min(1, "Password is required")
-    .min(8, "Password must have than 8 characters"),
+    .min(1, "El email es obligatorio")
+    .email("Correo electrónico inválido"),
+  password: z.string().min(8, "La contraseña debe tener al menos 8 caracteres"),
+  address: z.string().min(1, "La dirección es obligatoria").max(100),
+  phone: z.string().min(1, "El teléfono es obligatorio").max(15),
 });
 
 const SignUpForm = () => {
@@ -19,9 +23,13 @@ const SignUpForm = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      name: "",
+      lastname: "",
+      citizenId: "",
       email: "",
       password: "",
+      address: "",
+      phone: "",
     },
   });
 
@@ -32,9 +40,13 @@ const SignUpForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: values.username,
+        name: values.name,
+        lastname: values.lastname,
+        citizenId: values.citizenId,
         email: values.email,
         password: values.password,
+        address: values.address,
+        phone: values.phone,
       }),
     });
     if (response.ok) {
@@ -48,9 +60,13 @@ const SignUpForm = () => {
     <main>
       <h2> USER REGISTRATION FORM</h2>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <input name="username" placeholder="Username" />
-        <input name="email" placeholder="Email" />
-        <input name="password" placeholder="password" />
+        <input {...form.register("name")} placeholder="Name" />
+        <input {...form.register("lastname")} placeholder="Last Name" />
+        <input {...form.register("citizenId")} placeholder="Citizen ID" />
+        <input {...form.register("email")} placeholder="Email" />
+        <input {...form.register("password")} placeholder="Password" />
+        <input {...form.register("address")} placeholder="Address" />
+        <input {...form.register("phone")} placeholder="Phone" />
         <button type="submit">Submit</button>
       </form>
     </main>
