@@ -11,6 +11,11 @@ body {
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-//import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
+import { Average } from "next/font/google";
 import "@/styles/globals.css";
+import Navbar from "@/components/navbar";
 
-//const inter = Inter({ subsets: ["latin"] });
+const average = Average({
+  subsets: ["latin"],
+  variable: "--font-average",
+  display: "swap",
+  weight: "400",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Talleres Casa Fierros",
@@ -15,8 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="es" className={`${average.variable} ${outfit.variable}`}>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

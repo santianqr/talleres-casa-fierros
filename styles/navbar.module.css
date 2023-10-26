@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+    position: relative;
+}
+
+.nav{
+    position: absolute;
+    left: 120px;
+}
+
+.nav a{
+    font-family: var(--font-outfit);
+    margin: 8px;
+}
+
+.nav a:hover{
+    color: #ffcb00;
+}
+
+.container_buttons{
+    
+}
+
+.container button{
+    background-color: #a66902;
+    color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: var(--font-outfit);
+    margin: 10px;
+}
