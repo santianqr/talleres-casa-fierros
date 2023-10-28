@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Button } from "@nextui-org/react";
 
 const images = ["/musculoso.webp", "/niche.webp"];
 
@@ -14,7 +15,7 @@ export default function Carousel() {
     setOpacity(0);
     const timeout = setTimeout(() => {
       setOpacity(1);
-    }, 100); // Ajusta este valor al tiempo de transición
+    }, 100);
     return () => clearTimeout(timeout);
   }, [page]);
 
@@ -39,22 +40,34 @@ export default function Carousel() {
 
   return (
     <section className="relative flex w-screen flex-col justify-center items-center px-6">
-      <div className="z-1 flex gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[50vw] sm:max-h-[50vh] max-w-[1024px] ">
+      <div className="z-1 flex gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[50vw] sm:max-h-[50vh] max-w-[1024px]">
         <div className="w-full h-full relative">
           <Image
-            className="w-full h-full object-cover object-center"
+            className="object-cover object-center"
             fill
             alt="images"
             src={images[page - 1]}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent">
+          <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-center items-center">
+            {/* logo letras */}
             <Image
-              className={`absolute bottom-0 left-0 m-4 transition-opacity duration-500 opacity-${opacity}`}
-              fill
+              className={`transition-opacity duration-500 opacity-${opacity}`}
+              width={500}
+              height={100}
               alt="logoletras"
               src={"/logo_letters.webp"}
             />
+            <h2
+              className={`text-white text-xl mb-2 transition-opacity duration-500 opacity-${opacity}`}
+            >
+              Mecánica Básica
+            </h2>
+            <Button
+              className={`bg-yellow-500 transition-opacity duration-500 opacity-${opacity}`}
+            >
+              Más Información
+            </Button>
           </div>
         </div>
 
