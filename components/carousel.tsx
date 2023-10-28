@@ -52,19 +52,20 @@ export default function Carousel() {
           <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-center items-center">
             {/* logo letras */}
             <Image
-              className={`transition-opacity duration-500 opacity-${opacity}`}
-              width={500}
-              height={100}
+              className={`transition-opacity duration-500 opacity-${opacity} px-[10vw]`}
+              layout="responsive"
+              width={300}
+              height={300}
               alt="logoletras"
               src={"/logo_letters.webp"}
             />
             <h2
-              className={`text-white text-xl mb-2 transition-opacity duration-500 opacity-${opacity}`}
+              className={`text-foreground text-2xl sm:text-xl xs:text-lg mb-2 transition-opacity duration-500 opacity-${opacity}`}
             >
               Mecánica Básica
             </h2>
             <Button
-              className={`bg-yellow-500 transition-opacity duration-500 opacity-${opacity}`}
+              className={`text-foreground bg-yellow-500 transition-opacity duration-500 opacity-${opacity} text-sm sm:text-xs xs:text-xxs p-3 sm:p-2 xs:p-1`}
             >
               Más Información
             </Button>
