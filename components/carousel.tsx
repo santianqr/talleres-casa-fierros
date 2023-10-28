@@ -52,7 +52,7 @@ export default function Carousel() {
           <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-center items-center">
             {/* logo letras */}
             <Image
-              className={`transition-opacity duration-500 opacity-${opacity} px-[10vw]`}
+              className={`transition-opacity duration-500 opacity-${opacity} px-[15vw]`}
               layout="responsive"
               width={300}
               height={300}
