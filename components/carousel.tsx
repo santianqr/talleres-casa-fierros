@@ -7,7 +7,17 @@ const images = ["/musculoso.webp", "/niche.webp"];
 
 export default function Carousel() {
   const [page, setpage] = useState<number>(1);
+  const [opacity, setOpacity] = useState<number>(1);
   const [intervalTime, setIntervalTime] = useState<number>(5000);
+
+  useEffect(() => {
+    setOpacity(0);
+    const timeout = setTimeout(() => {
+      setOpacity(1);
+    }, 100); // Ajusta este valor al tiempo de transición
+    return () => clearTimeout(timeout);
+  }, [page]);
+
   useEffect(() => {
     let int = setInterval(() => {
       setpage((prev) => (prev + 1 >= 3 ? 1 : prev + 1));
@@ -34,10 +44,18 @@ export default function Carousel() {
           <Image
             className="w-full h-full object-cover object-center"
             fill
-            alt="Image"
+            alt="images"
             src={images[page - 1]}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent"></div>
+
+          <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent">
+            <Image
+              className={`absolute bottom-0 left-0 m-4 transition-opacity duration-500 opacity-${opacity}`}
+              fill
+              alt="logoletras"
+              src={"/logo_letters.webp"}
+            />
+          </div>
         </div>
 
         {/* left arrow */}
