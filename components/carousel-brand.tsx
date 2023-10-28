@@ -18,8 +18,9 @@ const images = [
   "/brands/brand12.webp",
   "/brands/brand13.webp",
   "/brands/brand14.webp",
-  "/brands/brand15.webp",
   "/brands/brand16.webp",
+  "/brands/brand17.webp",
+  "/brands/brand18.webp",
 ];
 
 export default function CarouselBrand() {
@@ -33,7 +34,6 @@ export default function CarouselBrand() {
     return () => clearInterval(interval);
   }, [intervalTime]);
 
-
   const handlePrevPage = () => {
     setStart((prev) => (prev - 1 < 0 ? images.length - 6 : prev - 1));
     setIntervalTime(0);
@@ -46,13 +46,15 @@ export default function CarouselBrand() {
 
   return (
     <section className="flex w-screen justify-center px-6 py-4">
-      <div className="z-1 flex gap-3 w-full flex-row relative flex-nowrap items-center justify-center h-[10vw] sm:max-h-[10vh] max-w-[1024px] px-[3vw]">
+      <div className="z-1 flex gap-3 w-full flex-row relative flex-nowrap items-center justify-center h-[10vw] sm:max-h-[10vh] max-w-[1024px] px-[5vw]">
         {images.slice(start, start + 6).map((image, index) => (
-          <div key={index} className="w-full h-full relative overflow-hidden flex align-middle">
+          <div
+            key={index}
+            className="w-full h-full relative overflow-hidden flex align-middle"
+          >
             <Image
-              className="object-contain"
-              height={100}
-              width={80}
+              className="object-contain object-center"
+              fill
               alt="images"
               src={image}
             />
