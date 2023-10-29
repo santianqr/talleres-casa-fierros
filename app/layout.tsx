@@ -18,7 +18,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Talleres Casa Fierros",
-  description: "Taller de mecánica en general ubicado en Bogotá, Colombia.",
+  description: "Taller de mecánica en general ubicado en Bogotá",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${average.variable} ${outfit.variable} dark`}>
+    <html lang="es" className={`${average.variable} ${outfit.variable} dark`}>
       <body>
         <Providers>{children}</Providers>
       </body>

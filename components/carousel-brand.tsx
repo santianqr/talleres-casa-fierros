@@ -26,14 +26,16 @@ const images = [
 export default function CarouselBrand() {
   const [start, setStart] = useState<number>(0);
   const [intervalTime, setIntervalTime] = useState<number>(5000);
-
+  {
+    /* 
   useEffect(() => {
     const interval = setInterval(() => {
       setStart((prev) => (prev + 1 > images.length - 6 ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(interval);
   }, [intervalTime]);
-
+*/
+  }
   const handlePrevPage = () => {
     setStart((prev) => (prev - 1 < 0 ? images.length - 6 : prev - 1));
     setIntervalTime(0);
@@ -45,8 +47,8 @@ export default function CarouselBrand() {
   };
 
   return (
-    <section className="flex w-screen justify-center px-6 py-4">
-      <div className="z-1 flex gap-3 w-full flex-row relative flex-nowrap items-center justify-center h-[10vw] sm:max-h-[10vh] max-w-[1024px] px-[5vw]">
+    <section className="flex w-full justify-center py-4">
+      <div className="z-1 flex gap-3 w-full flex-row relative flex-nowrap items-center justify-center h-[10vw] sm:max-h-[10vh] max-w-[1024px] px-[5vw] py-1">
         {images.slice(start, start + 6).map((image, index) => (
           <div
             key={index}

@@ -39,7 +39,7 @@ export default function Carousel() {
   };
 
   return (
-    <section className="relative flex w-screen flex-col justify-center items-center px-6">
+    <section className="relative flex w-full flex-col justify-center items-center px-6">
       <div className="z-1 flex gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[50vw] sm:max-h-[50vh] max-w-[1024px]">
         <div className="w-full h-full relative">
           <Image
@@ -53,19 +53,18 @@ export default function Carousel() {
             {/* logo letras */}
             <Image
               className={`transition-opacity duration-500 opacity-${opacity} px-[15vw]`}
-              layout="responsive"
-              width={300}
-              height={300}
+              width={1000}
+              height={1000}
               alt="logoletras"
               src={"/logo_letters.webp"}
             />
-            <h2
-              className={`text-foreground text-2xl sm:text-xl xs:text-lg mb-2 transition-opacity duration-500 opacity-${opacity}`}
+            <h4
+              className={`text-foreground mb-2 transition-opacity duration-500 opacity-${opacity}`}
             >
               Mecánica Básica
-            </h2>
+            </h4>
             <Button
-              className={`text-foreground bg-yellow-500 transition-opacity duration-500 opacity-${opacity} text-sm sm:text-xs xs:text-xxs p-3 sm:p-2 xs:p-1`}
+              className={`text-foreground bg-yellow-500 transition-opacity duration-500 opacity-${opacity}`}
             >
               Más Información
             </Button>
