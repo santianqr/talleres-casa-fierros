@@ -46,7 +46,7 @@ export default function CarouselBrand() {
               className="object-contain object-center"
               fill
               alt="images"
-              sizes="(max-width: 640px) 100vw, (max-width: 1020px) 53vw, 33vw"
+              sizes="(max-width: 640px) 50vw, 33vw"
               src={image}
             />
           </div>
