@@ -2,6 +2,7 @@
 import CarouselBrand from "@/components/carousel-brand";
 import HeaderPage from "@/components/header";
 import Carousel from "@/components/carousel";
+import AboutSection from "@/components/about-section";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <HeaderPage />
       <Carousel />
       <CarouselBrand />
+      <AboutSection />
     </main>
   );
 }

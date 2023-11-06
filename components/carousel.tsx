@@ -39,7 +39,7 @@ export default function Carousel() {
             className="relative"
             fill
             alt="images"
-            sizes="(max-width: 640px) 100vw, (max-width: 1020px) 53vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1020px) 66vw, 33vw"
             src={images[page]}
           />
 

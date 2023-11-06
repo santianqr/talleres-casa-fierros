@@ -35,7 +35,7 @@ export default function CarouselBrand() {
   }, []);
 
   return (
-    <section className="flex w-full justify-center py-4 px-6">
+    <section className="flex w-full justify-center py-4 px-6 flex-col items-center">
       <div className="z-1 flex gap-1 w-full flex-row relative flex-nowrap items-center justify-center h-[10vw] sm:max-h-[10vh] max-w-[1024px] px-[5vw] py-1 pl-12 pr-12">
         {[...images, ...images].slice(start, start + 5).map((image, index) => (
           <div
