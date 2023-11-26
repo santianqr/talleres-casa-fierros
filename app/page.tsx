@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <main>
       <HeaderPage />
-      <Carousel />
-      <CarouselBrand />
-      <AboutSection />
+      <AboutSection/>
     </main>
   );
 }

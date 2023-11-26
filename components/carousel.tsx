@@ -1,12 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@nextui-org/react";
+import musculoso from "@/public/musculoso.webp";
+import niche from "@/public/niche.webp";
 
-const images = ["/musculoso.webp", "/niche.webp"];
+const images = [musculoso, niche];
 
-export default function Carousel() {
+// Single Responsibility Principle: Cada función tiene una única responsabilidad
+const useCarousel = (images: StaticImageData[]) => {
   const [page, setPage] = useState<number>(0);
   const [opacity, setOpacity] = useState<number>(1);
 
@@ -31,20 +34,28 @@ export default function Carousel() {
     return () => clearInterval(interval);
   }, [handlePageChange]);
 
+  return { page, opacity, handlePageChange };
+};
+
+// Open/Closed Principle: Las entidades de software deben estar abiertas para su extensión, pero cerradas para su modificación
+export default function Carousel() {
+  const { page, opacity, handlePageChange } = useCarousel(images);
+
   return (
     <section className="flex w-full flex-col justify-center items-center px-6">
-      <div className="z-1 flex gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[45vw] sm:max-h-[45vh] max-w-[1024px]">
-        <div className="w-full h-full">
+      <div className="flex gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[45vw] sm:max-h-[45vh] max-w-[1024px]">
+        <div className="w-auto h-auto">
           <Image
-            className="relative"
-            fill
             alt="images"
+            style={{
+              objectFit: "cover", // cover, contain, none
+            }}
             sizes="(max-width: 640px) 100vw, (max-width: 1020px) 66vw, 33vw"
             src={images[page]}
           />
 
           <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-between items-center py-[3vw]">
-            <div className="relative w-[80vw] h-[15vh] max-w-[800px]">
+            <div className="relative w-[15rem] sm:w-[40rem] h-48 max-w-[600px]">
               <Image
                 className={`transition-opacity duration-500 opacity-${opacity} px-8`}
                 fill

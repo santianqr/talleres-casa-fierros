@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Average, Outfit } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
+import Providers from "@/app/providers";
+import ThemeSwitcher from '@/components/theme-switcher'
 
 const average = Average({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Talleres Casa Fierros",
-  description: "Taller de mecánica en general ubicado en Bogotá",
+  description: "Taller de mecánica en general ubicado en Bogotá.",
 };
 
 export default function RootLayout({
@@ -27,9 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${average.variable} ${outfit.variable} dark`}>
-      <body>
-        <Providers>{children}</Providers>
+    <html lang="es">
+      <body className={`dark ${average.variable} ${outfit.variable}`}>
+        <Providers>
+          {children}
+          {/*<ThemeSwitcher />*/}
+        </Providers>
       </body>
     </html>
   );
