@@ -4,7 +4,7 @@ import { FaTools } from "react-icons/fa";
 export default function CarroSection() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] flex flex-col sm:flex-row justify-between items-center bg-yellow-500/[0.6] gap-y-4 sm:gap-y-0">
+      <div className="max-w-[1024px] w-[100%] flex flex-col sm:flex-row justify-between items-center bg-yellow-500/[0.6] gap-y-4 sm:gap-y-0 py-4">
         <div className="hidden sm:block sm:relative sm:w-[35%] sm:h-[30vh]">
           <Image
             alt="..."

@@ -4,13 +4,15 @@ import HeaderPage from "@/components/header";
 import Carousel from "@/components/carousel";
 import AboutSection from "@/components/about-section";
 import CarroSection from "@/components/carro-section";
+import PrefSection from "@/components/pref-section";
 
 export default function Home() {
   return (
     <main>
       <HeaderPage />
-      <AboutSection/>
-      <CarroSection/>
+      <AboutSection />
+      <CarroSection />
+      <PrefSection />
     </main>
   );
 }
