@@ -4,8 +4,8 @@ import { Link, Button } from "@nextui-org/react";
 export default function PrefSection() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] relative pt-6 flex flex-col sm:flex-row justify-between items-center">
-        <div className="w-[30%] flex flex-col gap-6">
+      <div className="max-w-[1024px] w-[100%] relative pt-6 flex flex-col sm:flex-row justify-between items-center gap-12">
+        <div className="w-full sm:w-[40%] flex flex-col gap-6 text-center sm:text-left sm:pl-4 justify-center sm:justify-start">
           <h2 className="font-bold text-lg sm:text-2xl">
             ¿POR QUÉ PREFERIRNOS?
           </h2>
@@ -32,7 +32,7 @@ export default function PrefSection() {
             Más Información
           </Button>
         </div>
-        <div className="w-[50%] items-center">
+        <div className="w-[80%] sm:w-[50%] bg-red-500">
           <YoutubeVideo />
         </div>
       </div>
