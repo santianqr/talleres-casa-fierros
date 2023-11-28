@@ -16,18 +16,22 @@ export default function CotizaSection() {
             </div>
           </div>
         </div>
-
-        <div className="w-64">
-          <GoogleMapsEmbed
-            apiKey="AIzaSyAaegn0N4t6OBIQBwhVVlZ2GepBvD9mSkg"
-            height={400}
-            width={400}
-            mode="place"
-            q="Talleres Casa Fierros, Calle 161a, Bogotá"
-            allowfullscreen
-            loading="lazy"
-            style="border-radius:1rem;"
-          />
+        <div>
+          <div className="w-64">
+            <GoogleMapsEmbed
+              apiKey="AIzaSyAaegn0N4t6OBIQBwhVVlZ2GepBvD9mSkg"
+              height={400}
+              width={400}
+              mode="place"
+              q="Talleres Casa Fierros, Calle 161a, Bogotá"
+              allowfullscreen
+              loading="lazy"
+              style="border-radius:1rem;"
+            />
+          </div>
+          <div>
+            
+          </div>
         </div>
       </div>
     </section>
