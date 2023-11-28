@@ -27,7 +27,12 @@ const CalendarContainer = styled.div`
 
   /* Estilos para el día seleccionado */
   .react-calendar__tile--active {
-    background: #ecc94b; /* Fondo amarillo para el día seleccionado */
+    background: rgba(
+      236,
+      201,
+      75,
+      0.6
+    ); /* Fondo amarillo para el día seleccionado */
     border: none;
     color: black; /* Texto negro para el día seleccionado */
   }
@@ -56,6 +61,7 @@ const CalendarContainer = styled.div`
 
 export default function AgendaSection() {
   const [value, onChange] = useState(new Date());
+
   return (
     <section className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%]">
@@ -67,62 +73,68 @@ export default function AgendaSection() {
           </div>
         </div>
 
-        <form className="flex flex-row pt-[5vw]">
-          <div className="flex flex-col w-[40%]">
+        <form className="flex flex-col items-center sm:flex-row pt-[5vw] ">
+          <div className="flex flex-col w-[40%] gap-y-8">
             <div className="flex flex-col">
               <label htmlFor="name">NOMBRE:</label>
-              <input type="text" className=""/>
+              <input
+                type="text"
+                className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none "
+              />
             </div>
             <div className="flex flex-col">
               <label htmlFor="car">TIPO DE CARRO:</label>
-              <input type="text" />
+              <input
+                type="text"
+                className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
+              />
             </div>
 
-            <div className="flex flex-row justify-between px-[2vw] w-[70%]">
-              <div className="flex flex-col">
+            <div className="flex flex-row px-[1.2vw] w-[100%] justify-center gap-x-[3vw]">
+              <div className="flex flex-col items-center">
                 <p>SERVICIO</p>
-                <label>
+                <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion1" />
-                  Opción 1
+                  <span>Opción 1</span>
                 </label>
-                <label>
+                <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion2" />
-                  Opción 2
+                  <span>Opción 2</span>
                 </label>
-                <label>
+                <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion3" />
-                  Opción 3
+                  <span>Opción 3</span>
                 </label>
-                <label>
+                <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion4" />
-                  Opción 4
+                  <span>Opción 4</span>
                 </label>
-                <label>
+                <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion5" />
-                  Opción 5
+                  <span>Opción 5</span>
                 </label>
               </div>
               <div className="flex flex-col">
-                <p>HORARIO</p>
-                <label>
-                  <input type="radio" name="opciones2" value="opcion1" />
-                  Opción 1
+              <p>HORARIOS</p>
+                <label className="flex items-center space-x-2">
+                  <input type="radio" name="opciones" value="opcion1" />
+                  <span>Opción 1</span>
                 </label>
-                <label>
-                  <input type="radio" name="opciones2" value="opcion2" />
-                  Opción 2
+                <label className="flex items-center space-x-2">
+                  <input type="radio" name="opciones" value="opcion2" />
+                  <span>Opción 2</span>
                 </label>
-                <label>
-                  <input type="radio" name="opciones2" value="opcion3" />
-                  Opción 3
+                <label className="flex items-center space-x-2">
+                  <input type="radio" name="opciones" value="opcion3" />
+                  <span>Opción 3</span>
                 </label>
-                <label>
-                  <input type="radio" name="opciones2" value="opcion4" />
-                  Opción 4
+                <label className="flex items-center space-x-2">
+                  <input type="radio" name="opciones" value="opcion4" />
+                  <span>Opción 4</span>
                 </label>
-                <label>
-                  <input type="radio" name="opciones2" value="opcion5" />
-                  Opción 5
+                <label className="flex items-center space-x-2">
+                  <input type="radio" name="opciones" value="opcion5" />
+                  <span>Opción 5</span>
                 </label>
               </div>
             </div>
