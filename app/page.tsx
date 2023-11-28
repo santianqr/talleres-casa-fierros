@@ -5,6 +5,7 @@ import AboutSection from "@/components/about-section";
 import CarroSection from "@/components/carro-section";
 import PrefSection from "@/components/pref-section";
 import AgendaSection from "@/components/agenda-section";
+import CotizaSection from "@/components/cotiza-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <CarroSection />
       <PrefSection />
       <AgendaSection />
+      <CotizaSection />
     </main>
   );
 }

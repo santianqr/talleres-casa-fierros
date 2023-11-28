@@ -115,7 +115,7 @@ export default function AgendaSection() {
                 </label>
               </div>
               <div className="flex flex-col">
-              <p>HORARIOS</p>
+                <p>HORARIOS</p>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion1" />
                   <span>Opción 1</span>
