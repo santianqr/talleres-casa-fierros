@@ -10,15 +10,15 @@ export default function CotizaSection() {
           <div className="relative w-[60%]">
             <div className="absolute inset-x-0 top-1/2 border-t border-yellow-500 transform -translate-y-1/2"></div>
           </div>
-          <div className="flex flex-row">
+          <div className="flex flex-row items-center gap-x-3">
             <p className="text-[5vh] font-bold text-white">COTIZA YA</p>
-            <div className="relative w-[5vw] h-[3vh]">
-              <Image src={"/tools.png"} fill alt="" />
+            <div className="relative w-[7vw] h-[4vh]">
+              <Image src={"/ICONO-Cotiza ya.png"} fill alt="" />
             </div>
           </div>
         </div>
-        <div className="flex flex-row">
-          <div className="w-[60%]">
+        <div className="flex flex-row justify-between">
+          <div className="w-[40%] flex justify-center">
             <GoogleMapsEmbed
               apiKey="AIzaSyAaegn0N4t6OBIQBwhVVlZ2GepBvD9mSkg"
               height={400}
@@ -27,10 +27,10 @@ export default function CotizaSection() {
               q="Talleres Casa Fierros, Calle 161a, Bogotá"
               allowfullscreen
               loading="lazy"
-              style="border-radius:1rem;"
+              style="border-radius:1rem; max-width: 100%; max-height: 100%;"
             />
           </div>
-          <div className="flex flex-col gap-y-6 w-[40%] justify-between">
+          <div className="flex flex-col gap-y-6 w-[45%] justify-between">
             <div className="flex flex-row gap-x-6 justify-between">
               <div className="flex flex-col justify-between">
                 <input
