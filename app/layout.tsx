@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Average, Outfit } from "next/font/google";
 import "./globals.css";
 import Providers from "@/app/providers";
-//import ThemeSwitcher from '@/components/theme-switcher'
+import ThemeSwitcher from '@/components/theme-switcher'
 
 const average = Average({
   subsets: ["latin"],
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={`dark ${average.variable} ${outfit.variable}`}>
         <Providers>
           {children}
-          {/*<ThemeSwitcher />*/}
+          <ThemeSwitcher />
         </Providers>
       </body>
     </html>

@@ -45,7 +45,7 @@ export default function CotizaSection() {
                 />
                 <input
                   type="text"
-                  placeholder="no se que dice"
+                  placeholder="Marca/Modelo/Año"
                   className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
                 />
               </div>
@@ -76,7 +76,7 @@ export default function CotizaSection() {
             <div className="flex flex-col gap-y-4">
               <input
                 type="text"
-                placeholder="tampoco se que dice"
+                placeholder="Motivo"
                 className="w-[100%] bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
               />
               <label className="flex items-center space-x-2">

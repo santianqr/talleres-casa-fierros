@@ -91,50 +91,50 @@ export default function AgendaSection() {
             </div>
 
             <div className="flex flex-row px-[1.2vw] w-[100%] justify-center gap-x-[3vw]">
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col justify-start">
                 <p>SERVICIO</p>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion1" />
-                  <span>Opción 1</span>
+                  <span>Mecánica Básica</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion2" />
-                  <span>Opción 2</span>
+                  <span>Mecánica especializada</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion3" />
-                  <span>Opción 3</span>
+                  <span>Electricidad automotriz</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion4" />
-                  <span>Opción 4</span>
+                  <span>Latoneria y pintura</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion5" />
-                  <span>Opción 5</span>
+                  <span>Servicios especiales</span>
                 </label>
               </div>
               <div className="flex flex-col">
                 <p>HORARIOS</p>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion1" />
-                  <span>Opción 1</span>
+                  <span>08:00am</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion2" />
-                  <span>Opción 2</span>
+                  <span>08:30am</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion3" />
-                  <span>Opción 3</span>
+                  <span>09:00am</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion4" />
-                  <span>Opción 4</span>
+                  <span>09:30am</span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="opciones" value="opcion5" />
-                  <span>Opción 5</span>
+                  <span>10:00am</span>
                 </label>
               </div>
             </div>
