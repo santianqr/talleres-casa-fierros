@@ -9,12 +9,20 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] border-t-1 border-t-yellow-500 h-[20vh] flex flex-row">
-        <div className="flex flex-row w-[50%] justify-between px-10 items-center">
-          <div className="relative w-36 h-28">
-            <Image src={"/logo_color.png"} alt="" fill />
-          </div>
-          <div className="flex flex-col gap-y-3">
+      <div className="max-w-[1024px] w-[100%] border-t-1 border-t-yellow-500 flex flex-col sm:flex-row gap-x-4 items-center">
+        <div className="flex flex-row w-[50%] justify-between items-center">
+          <Image
+            src={"/logo_color.png"}
+            alt=""
+            height={150}
+            width={150}
+            objectFit="contain"
+          />
+
+          <div
+            className="flex flex-col gap-y-3"
+            style={{ wordBreak: "break-word" }}
+          >
             <div className="flex flex-row items-center">
               <FaLocationDot />
               <p className="px-2">Cl. 161a #16a-58</p>
@@ -33,8 +41,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row w-[50%] justify-between px-10 items-center pt-8">
-          <div className="text-sm">
+        <div className="flex flex-row w-[50%] justify-between items-center pt-8">
+          <div className="text-sm h-[100%]">
             <p>Inicio</p>
             <p>Servicios</p>
             <p>Blog</p>
@@ -48,7 +56,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div>
+            <div className="flex flex-row justify-between">
               <div>
                 <IoLogoInstagram />
               </div>
@@ -59,7 +67,7 @@ export default function Footer() {
                 <FaWhatsapp />
               </div>
             </div>
-            <p>® 2023 Talleres Casa Fierros</p>
+            <p className="text-sm">® 2023 Talleres Casa Fierros</p>
           </div>
         </div>
       </div>
