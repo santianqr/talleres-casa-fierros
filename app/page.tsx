@@ -18,8 +18,8 @@ export default function Home() {
       <CarroSection />
       <PrefSection />*/}
       <AgendaSection />
-      {/*<CotizaSection />
-      <Footer />*/}
+      <CotizaSection />
+      {/*<Footer />*/}
     </main>
   );
 }

@@ -1,24 +1,28 @@
 import Image from "next/image";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import { Button } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
+import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 
 export default function CotizaSection() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%] ">
         <div className="flex flex-row items-center justify-between">
-          <div className="relative w-[60%]">
+          <div className="relative w-[20%] sm:w-[50%]">
             <div className="absolute inset-x-0 top-1/2 border-t border-yellow-500 transform -translate-y-1/2"></div>
           </div>
           <div className="flex flex-row items-center gap-x-3">
-            <p className="text-[5vh] font-bold text-white">COTIZA YA</p>
-            <div className="relative w-[7vw] h-[4vh]">
+            <p className="text-3xl sm:text-[5vh] font-bold text-white">
+              COTIZA YA
+            </p>
+            <div className="relative w-10 h-[4vh]">
               <Image src={"/ICONO-Cotiza ya.png"} fill alt="" />
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between">
-          <div className="w-[40%] flex justify-center">
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-between mt-12 gap-6 items-center">
+          <div className="w-[90%] sm:w-[40%] flex justify-center">
             <GoogleMapsEmbed
               apiKey="AIzaSyAaegn0N4t6OBIQBwhVVlZ2GepBvD9mSkg"
               height={400}
@@ -30,62 +34,35 @@ export default function CotizaSection() {
               style="border-radius:1rem; max-width: 100%; max-height: 100%;"
             />
           </div>
-          <div className="flex flex-col gap-y-6 w-[45%] justify-between">
+          <form className="flex flex-col gap-y-6 justify-between w-[80%] sm:w-[40%]">
             <div className="flex flex-row gap-x-6 justify-between">
               <div className="flex flex-col justify-between">
-                <input
+                <Input type="text" variant={"underlined"} label="Nombre" />
+                <Input type="text" variant={"underlined"} label="Celular" />
+                <Input
                   type="text"
-                  placeholder="Nombre"
-                  className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
-                />
-                <input
-                  type="text"
-                  placeholder="Celular"
-                  className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
-                />
-                <input
-                  type="text"
-                  placeholder="Marca/Modelo/Año"
-                  className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
+                  variant={"underlined"}
+                  label="Marca/Modelo/Año"
                 />
               </div>
-              <div>
-                <p>SERVICIO</p>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" name="opciones" value="opcion1" />
-                  <span>Mecánica básica</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" name="opciones" value="opcion2" />
-                  <span>Mecánica especializada</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" name="opciones" value="opcion3" />
-                  <span>Electricidad automotriz</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" name="opciones" value="opcion4" />
-                  <span>Latoneria y pintura</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" name="opciones" value="opcion5" />
-                  <span>Servicios especiales</span>
-                </label>
-              </div>
+
+              <CheckboxGroup label="SERVICIOS" size="sm" color="warning">
+                <Checkbox value="mec-bas">Mecánica básica</Checkbox>
+                <Checkbox value="mec-esp">Mecánica especializada</Checkbox>
+                <Checkbox value="ele-aut">Electricidad automotriz</Checkbox>
+                <Checkbox value="lat-pin">Latoneria y pintura</Checkbox>
+                <Checkbox value="serv-esp">Servicios especiales</Checkbox>
+              </CheckboxGroup>
             </div>
             <div className="flex flex-col gap-y-4">
-              <input
-                type="text"
-                placeholder="Motivo"
-                className="w-[100%] bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
-              />
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" />
-                <span>Acepto los términos y condiciones</span>
-              </label>
+              <Input type="text" variant={"underlined"} label="Motivo" />
+              <Checkbox size="sm" color="warning" defaultSelected>
+                Acepto que mis datos enviados se recopilen y se almacenen de
+                forma responsable.
+              </Checkbox>
             </div>
             <Button color="warning">Cotizar</Button>
-          </div>
+          </form>
         </div>
       </div>
     </section>

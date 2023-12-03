@@ -132,7 +132,7 @@ export default function AgendaSection() {
               </Select>
             </div>
           </div>
-          <div className="w-[95%] sm:w-[60%] flex flex-col items-center align-middle justify-center">
+          <div className="w-[95%] sm:w-[60%] flex flex-col items-center align-middle justify-between">
             <CalendarContainer>
               <Calendar calendarType="gregory" />
             </CalendarContainer>
