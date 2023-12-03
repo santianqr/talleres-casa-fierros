@@ -16,10 +16,10 @@ export default function Home() {
       <CarouselBrand />
       <AboutSection />
       <CarroSection />
-      <PrefSection />*/}
+      <PrefSection />
       <AgendaSection />
-      <CotizaSection />
-      {/*<Footer />*/}
+      <CotizaSection />*/}
+      <Footer />
     </main>
   );
 }
