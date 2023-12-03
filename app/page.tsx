@@ -12,14 +12,14 @@ export default function Home() {
   return (
     <main>
       <HeaderPage />
-      {/*<Carousel />*/}
+      {/*<Carousel />
       <CarouselBrand />
       <AboutSection />
       <CarroSection />
-      <PrefSection />
+      <PrefSection />*/}
       <AgendaSection />
-      <CotizaSection />
-      <Footer />
+      {/*<CotizaSection />
+      <Footer />*/}
     </main>
   );
 }

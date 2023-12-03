@@ -4,6 +4,10 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Calendar from "react-calendar";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { CheckboxGroup, Checkbox } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
+import { Select, SelectItem } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 //import "react-calendar/dist/Calendar.css";
 
 const CalendarContainer = styled.div`
@@ -65,84 +69,76 @@ export default function AgendaSection() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%]">
-        <div className="flex flex-row gap-x-4">
-          <p className="text-[5vh] font-bold">AGENDA</p>
-          <div className="bg-yellow-500/[0.6] w-[100%] flex flex-row pl-2 items-center gap-2">
-            <p className="text-[5vh] font-bold text-background">YA</p>
-            <FaCalendarAlt style={{ fontSize: "5vh" }} />
+        <div className="flex flex-row gap-x-4 py-2 items-center">
+          <p className="text-3xl sm:text-[5vh] font-bold">AGENDA</p>
+          <div className="bg-yellow-500/[0.6] w-[100%] flex flex-row pl-2 items-center gap-2 py-2">
+            <p className="text-3xl sm:text-[5vh] font-bold text-background">
+              YA
+            </p>
+            <FaCalendarAlt style={{ fontSize: "3.5vh" }} />
           </div>
         </div>
 
         <form className="flex flex-col items-center sm:flex-row pt-[5vw] ">
-          <div className="flex flex-col w-[40%] gap-y-8">
-            <div className="flex flex-col">
-              <label htmlFor="name">NOMBRE:</label>
-              <input
-                type="text"
-                className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none "
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="car">TIPO DE CARRO:</label>
-              <input
-                type="text"
-                className="bg-background border-b-2 border-yellow-500/[0.6] focus:border-yellow-500 outline-none"
-              />
-            </div>
+          <div className="flex flex-col w-[80%] sm:w-[60%] gap-y-8">
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="NOMBRE"
+              placeholder="Nombre completo"
+            />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="TIPO DE CARRO"
+              placeholder="Marca/Modelo/Año"
+            />
 
-            <div className="flex flex-row px-[1.2vw] w-[100%] justify-center gap-x-[3vw]">
-              <div className="flex flex-col justify-start">
-                <p>SERVICIO</p>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion1" />
-                  <span>Mecánica Básica</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion2" />
-                  <span>Mecánica especializada</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion3" />
-                  <span>Electricidad automotriz</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion4" />
-                  <span>Latoneria y pintura</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion5" />
-                  <span>Servicios especiales</span>
-                </label>
-              </div>
-              <div className="flex flex-col">
-                <p>HORARIOS</p>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion1" />
-                  <span>08:00am</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion2" />
-                  <span>08:30am</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion3" />
-                  <span>09:00am</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion4" />
-                  <span>09:30am</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="radio" name="opciones" value="opcion5" />
-                  <span>10:00am</span>
-                </label>
-              </div>
+            <div className="flex flex-col sm:flex-row px-[0.8vw] w-[100%] items-start sm:justify-center gap-y-[3vh] sm:gap-x-[3vw]">
+              <CheckboxGroup label="SERVICIOS" size="sm" color="warning">
+                <Checkbox value="mec-bas">Mecánica básica</Checkbox>
+                <Checkbox value="mec-esp">Mecánica especializada</Checkbox>
+                <Checkbox value="ele-aut">Electricidad automotriz</Checkbox>
+                <Checkbox value="lat-pin">Latoneria y pintura</Checkbox>
+                <Checkbox value="serv-esp">Servicios especiales</Checkbox>
+              </CheckboxGroup>
+              <Select
+                labelPlacement={"outside"}
+                variant={"underlined"}
+                label="HORARIO"
+                placeholder="Hora"
+                className="w-[50vw] sm:w-[10vw]"
+              >
+                <SelectItem key={1}>07:00 - 07:30 am</SelectItem>
+                <SelectItem key={2}>07:30 - 08:00 am</SelectItem>
+                <SelectItem key={3}>08:00 - 08:30 am</SelectItem>
+                <SelectItem key={4}>08:30 - 09:00 am</SelectItem>
+                <SelectItem key={5}>09:00 - 09:30 am</SelectItem>
+                <SelectItem key={6}>09:30 - 10:00 am</SelectItem>
+                <SelectItem key={7}>10:00 - 10:30 am</SelectItem>
+                <SelectItem key={8}>10:30 - 11:00 am</SelectItem>
+                <SelectItem key={9}>11:00 - 11:30 am</SelectItem>
+                <SelectItem key={10}>11:30 - 12:00 pm</SelectItem>
+                <SelectItem key={11}>12:00 - 12:30 pm</SelectItem>
+                <SelectItem key={12}>12:30 - 1:00 pm</SelectItem>
+                <SelectItem key={13}>1:00 - 1:30 pm</SelectItem>
+                <SelectItem key={14}>1:30 - 2:00 pm</SelectItem>
+                <SelectItem key={15}>2:00 - 2:30 pm</SelectItem>
+                <SelectItem key={16}>2:30 - 3:00 pm</SelectItem>
+                <SelectItem key={17}>3:00 - 3:30 pm</SelectItem>
+                <SelectItem key={18}>3:30 - 4:00 pm</SelectItem>
+                <SelectItem key={19}>4:00 - 4:30 pm</SelectItem>
+                <SelectItem key={20}>4:30 - 5:00 pm</SelectItem>
+              </Select>
             </div>
           </div>
-          <div className="w-[60%] flex items-center align-middle justify-center">
+          <div className="w-[95%] sm:w-[60%] flex flex-col items-center align-middle justify-center">
             <CalendarContainer>
               <Calendar calendarType="gregory" />
             </CalendarContainer>
+            <Button color="warning" variant="solid">
+              Agendar
+            </Button>
           </div>
         </form>
       </div>
