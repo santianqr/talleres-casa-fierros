@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineSmartphone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
-import { IoLogoInstagram } from "react-icons/io5";
+import { AiFillInstagram } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -10,25 +10,25 @@ export default function Footer() {
   return (
     <footer className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%] border-t-1 border-t-yellow-500 flex flex-col sm:flex-row gap-x-4 items-center">
-        <div className="flex flex-row w-[50%] justify-between items-center">
+        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center px-4 gap-4">
           <Image
             src={"/logo_color.png"}
             alt=""
-            height={150}
-            width={150}
-            objectFit="contain"
+            height={140}
+            width={140}
+            className="object-contain"
           />
 
           <div
-            className="flex flex-col gap-y-3"
+            className="flex flex-col gap-y-3 w-[100%] sm:w-[40%] h-[40%] items-center"
             style={{ wordBreak: "break-word" }}
           >
             <div className="flex flex-row items-center">
-              <FaLocationDot />
+              <FaLocationDot className="text-xl" />
               <p className="px-2">Cl. 161a #16a-58</p>
             </div>
             <div className="flex flex-row items-center">
-              <MdOutlineSmartphone />
+              <MdOutlineSmartphone className="text-xl" />
               <p className="px-2">
                 324 582 7230
                 <br />
@@ -36,13 +36,13 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-row items-center">
-              <MdEmail />
+              <MdEmail className="text-xl" />
               <p className="px-2">atencion@tallerescasafierros.co</p>
             </div>
           </div>
         </div>
-        <div className="flex flex-row w-[50%] justify-between items-center pt-8">
-          <div className="text-sm h-[100%]">
+        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center pt-8 px-4 gap-4">
+          <div className="text-sm">
             <p>Inicio</p>
             <p>Servicios</p>
             <p>Blog</p>
@@ -55,19 +55,21 @@ export default function Footer() {
             <p>Sabados /8am-3pm</p>
           </div>
 
-          <div>
+          <div className="flex flex-col gap-y-4">
             <div className="flex flex-row justify-between">
-              <div>
-                <IoLogoInstagram />
+              <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
+                <AiFillInstagram />
               </div>
-              <div>
+              <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
                 <FaTiktok />
               </div>
-              <div>
+              <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
                 <FaWhatsapp />
               </div>
             </div>
-            <p className="text-sm">® 2023 Talleres Casa Fierros</p>
+            <p className="text-sm">
+              <span>®</span> 2023 Talleres Casa Fierros
+            </p>
           </div>
         </div>
       </div>

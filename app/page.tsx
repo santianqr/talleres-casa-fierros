@@ -7,18 +7,21 @@ import PrefSection from "@/components/pref-section";
 import AgendaSection from "@/components/agenda-section";
 import CotizaSection from "@/components/cotiza-section";
 import Footer from "@/components/footer";
+import Carouselv2 from "@/components/carouselv2";
 
 export default function Home() {
   return (
     <main>
       <HeaderPage />
-      {/*<Carousel />
-      <CarouselBrand />
+      {/*   
+      <Carouselv2 />
+      <Carousel />
+      <CarouselBrand />*/}
       <AboutSection />
       <CarroSection />
       <PrefSection />
       <AgendaSection />
-      <CotizaSection />*/}
+      <CotizaSection />
       <Footer />
     </main>
   );

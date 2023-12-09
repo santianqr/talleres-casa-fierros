@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@nextui-org/react";
 import musculoso from "@/public/musculoso.webp";
-import niche from "@/public/niche.webp";
+import niche from "@/public/carro.jpg";
 
 const images = [musculoso, niche];
 
@@ -47,14 +47,12 @@ export default function Carousel() {
         <div className="w-auto h-auto">
           <Image
             alt="images"
-            style={{
-              objectFit: "cover", // cover, contain, none
-            }}
+            className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1020px) 66vw, 33vw"
             src={images[page]}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-between items-center py-[3vw]">
+          <div className="relative inset-0 bg-gradient-to-r from-background to-transparent flex flex-col justify-between items-center py-[3vw]">
             <div className="relative w-[15rem] sm:w-[40rem] h-48 max-w-[600px]">
               <Image
                 className={`transition-opacity duration-500 opacity-${opacity} px-8`}
