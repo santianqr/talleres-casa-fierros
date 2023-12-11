@@ -136,7 +136,7 @@ export default function AgendaSection() {
             <CalendarContainer>
               <Calendar calendarType="gregory" />
             </CalendarContainer>
-            <Button color="warning" variant="solid">
+            <Button color="warning" variant="solid" className="w-[50%]">
               Agendar
             </Button>
           </div>

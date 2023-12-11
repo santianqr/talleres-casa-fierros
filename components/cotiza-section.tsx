@@ -35,7 +35,7 @@ export default function CotizaSection() {
             />
           </div>
           <form className="flex flex-col gap-y-6 justify-between w-[80%] sm:w-[40%]">
-            <div className="flex flex-row gap-x-6 justify-between">
+            <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-x-6 justify-between">
               <div className="flex flex-col justify-between">
                 <Input type="text" variant={"underlined"} label="Nombre" />
                 <Input type="text" variant={"underlined"} label="Celular" />
