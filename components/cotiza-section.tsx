@@ -24,7 +24,7 @@ export default function CotizaSection() {
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between mt-12 gap-6 items-center">
           <div className="w-[90%] sm:w-[40%] flex justify-center">
             <GoogleMapsEmbed
-              apiKey="AIzaSyAaegn0N4t6OBIQBwhVVlZ2GepBvD9mSkg"
+              apiKey={process.env.GOOGLE_MAPS_API_KEY!}
               height={400}
               width={400}
               mode="place"
