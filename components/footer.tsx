@@ -20,7 +20,7 @@ export default function Footer() {
           />
 
           <div
-            className="flex flex-col gap-y-3 w-[100%] sm:w-[40%] h-[40%] items-center"
+            className="flex flex-col gap-y-3 w-[100%] sm:w-[40%] h-[40%] items-center sm:items-start"
             style={{ wordBreak: "break-word" }}
           >
             <div className="flex flex-row items-center">
