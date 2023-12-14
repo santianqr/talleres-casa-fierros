@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
+import HeaderPage from "@/components/header";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import Image from "next/image";
+import Footer from "@/components/footer";
 
 export default function Servicios() {
   const defaultContent =
@@ -34,16 +37,18 @@ export default function Servicios() {
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
           <div className="w-full bg-gray-500 flex">
-            ddsa
-            <br />
-            fsf
-            <br />
-            fds
-            <br />
-            fds
-            <br />
-            <div className="w-1/2 bg-gradient-to-r from-transparent via-black to-black" />
-            <div className="w-1/2 bg-gradient-to-l from-transparent via-black to-black" />
+            <div className="w-1/2 bg-gradient-to-r from-transparent  to-black" />
+            <div className="relative bg-background ">
+              <Image
+                alt=""
+                src={"/ICONO-CARRO-AMARILLO.png"}
+                width={700}
+                height={200}
+                objectFit="contain"
+              />
+            </div>
+
+            <div className="w-1/2 bg-gradient-to-l from-transparent  to-black" />
           </div>
         </div>
       </div>
