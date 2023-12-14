@@ -74,9 +74,9 @@ export default function HeaderPage() {
           >
             <DropdownItem>Mecanica basica</DropdownItem>
             <DropdownItem>Mecanica especializada</DropdownItem>
-            <DropdownItem>Mecanica 3</DropdownItem>
-            <DropdownItem>Mecanica 4</DropdownItem>
-            <DropdownItem>Mecanica 5</DropdownItem>
+            <DropdownItem>Electricidad Automotriz</DropdownItem>
+            <DropdownItem>Latoneria y Pintura</DropdownItem>
+            <DropdownItem>Servicios Especiales</DropdownItem>
           </DropdownMenu>
         </Dropdown>
 
