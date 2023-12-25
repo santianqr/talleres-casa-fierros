@@ -69,10 +69,12 @@ export default function Footer() {
                 </Link>
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <FaTiktok />
+                <Link href="#">
+                  <FaTiktok />
+                </Link>
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <Link href="">
+                <Link href="#">
                   <FaWhatsapp />
                 </Link>
               </div>

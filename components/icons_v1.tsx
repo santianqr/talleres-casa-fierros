@@ -1,4 +1,6 @@
-export const Cash = ({ ...props }) => {
+import { SVGProps } from "react";
+
+export const Cash = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       {...props}
@@ -18,7 +20,7 @@ export const Cash = ({ ...props }) => {
   );
 };
 
-export const Card = ({ ...props }) => {
+export const Card = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       {...props}
@@ -38,7 +40,7 @@ export const Card = ({ ...props }) => {
   );
 };
 
-export const WireTransfer = ({ ...props }) => {
+export const WireTransfer = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       {...props}
