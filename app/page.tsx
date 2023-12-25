@@ -1,5 +1,3 @@
-import CarouselBrand from "@/components/carousel-brand";
-import Carousel from "@/components/carousel";
 import AboutSection from "@/components/about-section";
 import CarroSection from "@/components/carro-section";
 import PrefSection from "@/components/pref-section";
@@ -11,10 +9,7 @@ import PaymentMethods from "@/components/payment-methods";
 export default function Home() {
   return (
     <main>
-      {/*   
       <Carouselv2 />
-      <Carousel />
-      <CarouselBrand />*/}
       <AboutSection />
       <CarroSection />
       <PrefSection />

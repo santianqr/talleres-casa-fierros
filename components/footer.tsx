@@ -64,13 +64,17 @@ export default function Footer() {
           <div className="flex flex-col gap-y-4">
             <div className="flex flex-row justify-between">
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <AiFillInstagram />
+                <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr">
+                  <AiFillInstagram />
+                </Link>
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
                 <FaTiktok />
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <FaWhatsapp />
+                <Link href="">
+                  <FaWhatsapp />
+                </Link>
               </div>
             </div>
             <p className="text-sm">
