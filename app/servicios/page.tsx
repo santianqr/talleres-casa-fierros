@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import HeaderPage from "@/components/header";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
-import Footer from "@/components/footer";
 
 export default function Servicios() {
   const size = 24;
@@ -12,7 +10,6 @@ export default function Servicios() {
 
   return (
     <>
-      <HeaderPage />
       <main className="w-full py-4 px-6 flex justify-center">
         <div className="max-w-[1024px] w-[100%]">
           <section>
@@ -469,11 +466,6 @@ export default function Servicios() {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   );
-}
-
-{
-  /**/
 }

@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -43,12 +44,17 @@ export default function Footer() {
         </div>
         <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center pt-8 px-4 gap-4">
           <div className="text-sm">
-            <p>Inicio</p>
-            <p>Servicios</p>
-            <p>Blog</p>
+            <Link href={"/"}>
+              <p>Inicio</p>
+            </Link>
+            <Link href={"/servicios"}>
+              <p>Servicios</p>
+            </Link>
+            {/* <p>Blog</p>*/}
+
             <p>Contacto</p>
             <p>Nosotros</p>
-            <p>Trabaja con nosotros</p>
+            {/* <p>Trabaja con nosotros</p>*/}
             <br />
             <p>Horario de atención</p>
             <p>Luves - Viernes/7am - 5pm</p>

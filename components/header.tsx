@@ -47,7 +47,7 @@ export default function HeaderPage() {
           <TCFlogo />
         </NavbarBrand>
         <NavbarItem>
-          <Link className="text-foreground hover:text-yellow-500" href="#">
+          <Link className="text-foreground hover:text-yellow-500" href="/">
             Inicio
           </Link>
         </NavbarItem>
@@ -72,25 +72,30 @@ export default function HeaderPage() {
               base: "gap-4",
             }}
           >
-            <DropdownItem>Mecanica basica</DropdownItem>
-            <DropdownItem>Mecanica especializada</DropdownItem>
+            <DropdownItem>Mecanica Básica</DropdownItem>
+            <DropdownItem>Mecanica Especializada</DropdownItem>
             <DropdownItem>Electricidad Automotriz</DropdownItem>
             <DropdownItem>Latoneria y Pintura</DropdownItem>
             <DropdownItem>Servicios Especiales</DropdownItem>
           </DropdownMenu>
         </Dropdown>
 
-        <NavbarItem>
+        {/*<NavbarItem>
           <Link color="foreground" className="hover:text-yellow-500" href="#">
             Blog
           </Link>
-        </NavbarItem>
+        </NavbarItem>*/}
         <NavbarItem>
           <Link color="foreground" className="hover:text-yellow-500" href="#">
             Contacto
           </Link>
         </NavbarItem>
-        <Dropdown>
+        <NavbarItem>
+          <Link color="foreground" className="hover:text-yellow-500" href="#">
+            Nosotros
+          </Link>
+        </NavbarItem>
+        {/*<Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Button
@@ -114,10 +119,9 @@ export default function HeaderPage() {
             <DropdownItem>Nosotros</DropdownItem>
             <DropdownItem>Trabaja con nosotros</DropdownItem>
           </DropdownMenu>
-        </Dropdown>
+          </Dropdown>*/}
       </NavbarContent>
-
-      <NavbarContent justify="end">
+      {/*<NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex ">
           <Link href="#" className="text-yellow-500">
             Inicia Sesión
@@ -128,7 +132,7 @@ export default function HeaderPage() {
             Registrarse
           </Button>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
