@@ -10,10 +10,18 @@ export default function AboutSection() {
           <div className="flex flex-col gap-6 py-6 text-center sm:text-left w-full sm:w-1/2 justify-center sm:justify-start pl-0 sm:pl-4">
             <h1 className="font-bold text-lg sm:text-2xl">QUIENES SOMOS?</h1>
             <p className="text-sm sm:text-base">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              quidem maxime aliquid, eaque quia, omnis repudiandae recusandae
-              eligendi eum numquam ad. Dignissimos odio, rerum temporibus
-              ratione aliquid at unde incidunt?
+              Talleres Casa Fierros es una sociedad con más de 15 años de
+              experiencia certificada, nos dedicamos a la prestación de
+              servicios de mantenimiento, embellecimiento y reparación de
+              vehículos automotores. Actualmente contamos con una amplia
+              experiencia en el sector automotriz, garantizando así una
+              excelente calidad en el servicio.
+              <br />
+              Garantizamos un excelente servicio al cliente.
+              <br />
+              Contamos con talleres de mantenimiento, colisión y suministro de
+              repuestos/accesorios. equipo de la más alta calidad humana y
+              tecnológica.
             </p>
             <Button
               href="https://github.com/nextui-org/nextui"
