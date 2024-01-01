@@ -86,15 +86,19 @@ export default function HeaderPage() {
           </Link>
         </NavbarItem>*/}
         <NavbarItem>
-          <Link color="foreground" className="hover:text-yellow-500" href="#">
+          <Link
+            color="foreground"
+            className="hover:text-yellow-500"
+            href="/contacto"
+          >
             Contacto
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        {/*<NavbarItem>
           <Link color="foreground" className="hover:text-yellow-500" href="#">
             Nosotros
           </Link>
-        </NavbarItem>
+      </NavbarItem>*/}
         {/*<Dropdown>
           <NavbarItem>
             <DropdownTrigger>

@@ -17,7 +17,9 @@ export default function AboutSection() {
               experiencia en el sector automotriz, garantizando así una
               excelente calidad en el servicio.
               <br />
+              <br />
               Garantizamos un excelente servicio al cliente.
+              <br />
               <br />
               Contamos con talleres de mantenimiento, colisión y suministro de
               repuestos/accesorios. equipo de la más alta calidad humana y
