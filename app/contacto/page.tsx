@@ -2,7 +2,6 @@ import { GoogleMapsEmbed } from "@next/third-parties/google";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaTiktok } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
@@ -16,17 +15,18 @@ import { MdOutlineSmartphone } from "react-icons/md";
 export default function Contact() {
   return (
     <main className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%]">
+      <div className="max-w-[1024px] w-[100%] flex flex-col items-center">
         <p className="text-center text-[5vh] text-yellow-500 pb-4">CONTACTO</p>
-        <div>
+        <div className="relative w-full">
           <Image
             alt=""
             src={"/IMAGEN-CON-LINEAS.png"}
             height={100}
-            width={100}
+            width={1024}
+            className="object-contain"
           />
         </div>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between w-[15%]">
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
             <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr">
               <AiFillInstagram />
@@ -43,11 +43,11 @@ export default function Contact() {
             </Link>
           </div>
         </div>
-        <div className="w-[90%] sm:w-[40%] flex justify-center">
+        <div className="w-[100%] flex justify-center">
           <GoogleMapsEmbed
             apiKey={process.env.GOOGLE_MAPS_API_KEY!}
-            height={400}
-            width={400}
+            width={1024}
+            height={500}
             mode="place"
             q="Talleres Casa Fierros, Calle 161a, Bogotá"
             allowfullscreen
@@ -55,11 +55,22 @@ export default function Contact() {
             style="border-radius:1rem; max-width: 100%; max-height: 100%;"
           />
         </div>
-        <div>
-          <Image alt="" src={"/logo_letters.webp"} height={100} width={100} />
+        <div className="w-full h-[15vh] flex flex-col items-center relative">
+          <div className="w-full h-1/2 bg-yellow-500/[0.6] absolute top-0 z-10"></div>
+          <Image
+            alt=""
+            src={"/logo_letters.webp"}
+            height={100}
+            width={900}
+            className="absolute z-20"
+            style={{ top: "50%", transform: "translateY(-50%)" }}
+          />
+          <div className="w-full h-1/2 bg-background absolute bottom-0 z-10"></div>
         </div>
-        <div>
+
+        <div className="w-[85%] flex justify-between bg-yellow-500">
           <div>
+            <p>COMENTARIOS Y OPINIONES</p>
             <Input type="text" placeholder="Nombre" startContent={<FaUser />} />
             <Input
               type="email"
