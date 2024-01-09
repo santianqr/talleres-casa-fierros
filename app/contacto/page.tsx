@@ -15,7 +15,7 @@ import { MdOutlineSmartphone } from "react-icons/md";
 export default function Contact() {
   return (
     <main className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] flex flex-col items-center gap-y-16">
+      <div className="max-w-[1024px] w-[100%] flex flex-col items-center gap-y-8 sm:gap-y-16">
         <p className="text-center text-[5vh] text-yellow-500 pb-4">CONTACTO</p>
         <div className="relative w-full">
           <Image
@@ -26,8 +26,8 @@ export default function Contact() {
             className="object-contain"
           />
         </div>
-        <div className="flex flex-row justify-between w-[15%]">
-          <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
+        <div className="flex flex-row justify-end w-full gap-x-4">
+          <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl ">
             <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr">
               <AiFillInstagram />
             </Link>
@@ -68,27 +68,27 @@ export default function Contact() {
           <div className="w-full h-1/2 bg-background absolute bottom-0 z-10"></div>
         </div>
 
-        <div className="w-[65%] flex justify-between">
+        <div className="w-[80%] flex flex-col sm:flex-row justify-between gap-4 sm:px-14">
           <div className="flex flex-col items-center gap-y-4">
             <p>COMENTARIOS Y OPINIONES</p>
             <Input
               size="sm"
               type="email"
               placeholder="Nombre"
-              className="  "
+              className=" max-w-md "
               startContent={<FaUser />}
             />
             <Input
               size="sm"
               type="email"
-              className="   "
+              className="  max-w-md "
               placeholder="you@example.com"
               startContent={<MdEmail />}
             />
             <Textarea
               label="Descipción"
               placeholder="Escribe aqui"
-              className="max-w-xs"
+              className="max-w-md"
             />
 
             <Button
@@ -98,7 +98,10 @@ export default function Contact() {
               ENVIAR
             </Button>
           </div>
-          <div className="flex flex-col gap-y-8 items-center">
+          <div
+            className="flex flex-col gap-y-8 items-center"
+            style={{ wordBreak: "break-word" }}
+          >
             <div>
               <div className="flex flex-row items-center">
                 <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">

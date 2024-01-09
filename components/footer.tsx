@@ -52,8 +52,9 @@ export default function Footer() {
               <p>Servicios</p>
             </Link>
             {/* <p>Blog</p>*/}
-
-            <p>Contacto</p>
+            <Link href={"/contacto"}>
+              <p>Contacto</p>
+            </Link>
             {/*<p>Nosotros</p>*/}
             {/* <p>Trabaja con nosotros</p>*/}
             <br />
