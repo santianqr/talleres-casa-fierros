@@ -15,7 +15,7 @@ import { MdOutlineSmartphone } from "react-icons/md";
 export default function Contact() {
   return (
     <main className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] flex flex-col items-center">
+      <div className="max-w-[1024px] w-[100%] flex flex-col items-center gap-y-16">
         <p className="text-center text-[5vh] text-yellow-500 pb-4">CONTACTO</p>
         <div className="relative w-full">
           <Image
@@ -68,37 +68,49 @@ export default function Contact() {
           <div className="w-full h-1/2 bg-background absolute bottom-0 z-10"></div>
         </div>
 
-        <div className="w-[85%] flex justify-between bg-yellow-500">
-          <div>
+        <div className="w-[65%] flex justify-between">
+          <div className="flex flex-col items-center gap-y-4">
             <p>COMENTARIOS Y OPINIONES</p>
-            <Input type="text" placeholder="Nombre" startContent={<FaUser />} />
             <Input
+              size="sm"
               type="email"
+              placeholder="Nombre"
+              className="  "
+              startContent={<FaUser />}
+            />
+            <Input
+              size="sm"
+              type="email"
+              className="   "
               placeholder="you@example.com"
               startContent={<MdEmail />}
             />
             <Textarea
-              label="Description"
-              placeholder="Enter your description"
+              label="Descipción"
+              placeholder="Escribe aqui"
               className="max-w-xs"
             />
-            <div>
-              <Button color="primary" variant="light">
-                Light
-              </Button>
-              <Button color="primary" variant="solid">
-                Solid
-              </Button>
-            </div>
+
+            <Button
+              variant="solid"
+              className="bg-yellow-500 text-background font-bold"
+            >
+              ENVIAR
+            </Button>
           </div>
-          <div>
+          <div className="flex flex-col gap-y-8 items-center">
             <div>
               <div className="flex flex-row items-center">
-                <FaLocationDot className="text-xl" />
+                <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
+                  <FaLocationDot className="text-xl" />
+                </div>
+
                 <p className="px-2">Cl. 161a #16a-58</p>
               </div>
               <div className="flex flex-row items-center">
-                <MdOutlineSmartphone className="text-xl" />
+                <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
+                  <MdOutlineSmartphone className="text-xl" />
+                </div>
                 <p className="px-2">
                   324 582 7230
                   <br />
@@ -106,12 +118,18 @@ export default function Contact() {
                 </p>
               </div>
               <div className="flex flex-row items-center">
-                <MdEmail className="text-xl" />
+                <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
+                  <MdEmail className="text-xl" />
+                </div>
                 <p className="px-2">atencion@tallerescasafierros.co</p>
               </div>
             </div>
-            <div>
-              <p>Horario de atencion</p>
+            <div className="flex flex-row gap-x-6">
+              <p className="font-bold">
+                Horario de
+                <br />
+                atencion
+              </p>
               <p>
                 Lunes-Viernes/ 7am-5pm <br />
                 Sabados/ 8am-3pm
