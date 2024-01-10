@@ -35,8 +35,7 @@ export default function Contact() {
       }),
     });
 
-    const datos = await respuesta.json();
-    console.log(datos);
+    console.log(respuesta);
   };
 
   return (
