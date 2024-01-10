@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 const nodemailer = require("nodemailer");
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  
+
   const mailTransport = nodemailer.createTransport({
     host: "smtpout.secureserver.net",
     secure: true,
@@ -38,11 +39,11 @@ export async function POST(req: NextRequest) {
     .sendMail(mailOptions)
     .then(() => {
       console.log("Email sent successfully");
+      return NextResponse.json({ message: body });
     })
     .catch((err: any) => {
       console.log("Failed to send email");
       console.error(err);
+      return NextResponse.json({ message: "Error" });
     });
-
-  return NextResponse.json({ message: body });
 }
