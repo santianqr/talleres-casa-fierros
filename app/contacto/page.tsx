@@ -1,3 +1,5 @@
+"use client";
+
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +13,32 @@ import { Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineSmartphone } from "react-icons/md";
+import { FormEvent, useState } from "react";
 
 export default function Contact() {
+  const [nombre, setNombre] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const enviarDatos = async (event: FormEvent) => {
+    event.preventDefault();
+
+    const respuesta = await fetch("/api/mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nombre: nombre,
+        correo: correo,
+        mensaje: mensaje,
+      }),
+    });
+
+    const datos = await respuesta.json();
+    console.log(datos);
+  };
+
   return (
     <main className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%] flex flex-col items-center gap-y-8 sm:gap-y-16">
@@ -43,7 +69,7 @@ export default function Contact() {
             </Link>
           </div>
         </div>
-        <div className="w-[100%] flex justify-center">
+        {/*<div className="w-[100%] flex justify-center">
           <GoogleMapsEmbed
             apiKey={process.env.GOOGLE_MAPS_API_KEY!}
             width={1024}
@@ -53,8 +79,8 @@ export default function Contact() {
             allowfullscreen
             loading="lazy"
             style="border-radius:1rem; max-width: 100%; max-height: 100%;"
-          />
-        </div>
+  />
+        </div>*/}
         <div className="w-full h-[15vh] flex flex-col items-center relative">
           <div className="w-full h-1/2 bg-yellow-500/[0.6] absolute top-0 z-10"></div>
           <Image
@@ -69,14 +95,18 @@ export default function Contact() {
         </div>
 
         <div className="w-[80%] flex flex-col sm:flex-row justify-between gap-4 sm:px-14">
-          <div className="flex flex-col items-center gap-y-4">
+          <form
+            className="flex flex-col items-center gap-y-4"
+            onSubmit={enviarDatos}
+          >
             <p>COMENTARIOS Y OPINIONES</p>
             <Input
               size="sm"
-              type="email"
+              type="text"
               placeholder="Nombre"
               className=" max-w-md "
               startContent={<FaUser />}
+              onChange={(e) => setNombre(e.target.value)}
             />
             <Input
               size="sm"
@@ -84,20 +114,23 @@ export default function Contact() {
               className="  max-w-md "
               placeholder="you@example.com"
               startContent={<MdEmail />}
+              onChange={(e) => setCorreo(e.target.value)}
             />
             <Textarea
               label="Descipción"
               placeholder="Escribe aqui"
               className="max-w-md"
+              onChange={(e) => setMensaje(e.target.value)}
             />
 
             <Button
+              type="submit"
               variant="solid"
               className="bg-yellow-500 text-background font-bold"
             >
               ENVIAR
             </Button>
-          </div>
+          </form>
           <div
             className="flex flex-col gap-y-8 items-center"
             style={{ wordBreak: "break-word" }}

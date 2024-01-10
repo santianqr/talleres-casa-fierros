@@ -5,63 +5,67 @@ import { GoogleMapsEmbed } from "@next/third-parties/google";
 import { Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function CotizaSection() {
-  const [formState, setFormState] = useState<{
-    nombre: string;
-    celular: string;
-    marcaModeloAno: string;
-    servicios: string[];
-    motivo: string;
-    acepto: boolean;
-  }>({
-    nombre: "",
-    celular: "",
-    marcaModeloAno: "",
-    servicios: [],
-    motivo: "",
-    acepto: false,
-  });
+  const [nombre, setNombre] = useState("");
+  const [celular, setCelular] = useState("");
+  const [carro, setCarro] = useState("");
+  const [motivo, setMotivo] = useState("");
+  const [mecBas, setMecBas] = useState(false);
+  const [mecEsp, setMecEsp] = useState(false);
+  const [eleAut, setEleAut] = useState(false);
+  const [latPin, setLatPin] = useState(false);
+  const [servEsp, setServEsp] = useState(false);
 
-  const handleChange = (e: any) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const enviarDatos = async (event: FormEvent) => {
+    event.preventDefault();
 
-  const handleCheckboxChange = (e: any) => {
-    if (e.target.checked) {
-      setFormState({
-        ...formState,
-        servicios: [...formState.servicios, e.target.value],
-      });
-    } else {
-      setFormState({
-        ...formState,
-        servicios: formState.servicios.filter(
-          (value) => value !== e.target.value
-        ),
-      });
-    }
-  };
+    const serviciosSeleccionados = {
+      "mec-bas": mecBas,
+      "mec-esp": mecEsp,
+      "ele-aut": eleAut,
+      "lat-pin": latPin,
+      "serv-esp": servEsp,
+    };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const response = await fetch("/api/mail", {
+    const respuesta = await fetch("/api/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formState),
+      body: JSON.stringify({
+        nombre: nombre,
+        celular: celular,
+        carro: carro,
+        motivo: motivo,
+        servicio: serviciosSeleccionados,
+      }),
     });
 
-    if (response.ok) {
-      console.log("Email sent successfully");
-    } else {
-      console.log("Error sending email");
+    const datos = await respuesta.json();
+    console.log(datos);
+  };
+
+  const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
+    switch (event.target.value) {
+      case "mec-bas":
+        setMecBas(event.target.checked);
+        break;
+      case "mec-esp":
+        setMecEsp(event.target.checked);
+        break;
+      case "ele-aut":
+        setEleAut(event.target.checked);
+        break;
+      case "lat-pin":
+        setLatPin(event.target.checked);
+        break;
+      case "serv-esp":
+        setServEsp(event.target.checked);
+        break;
+      default:
+        break;
     }
   };
 
@@ -95,7 +99,7 @@ export default function CotizaSection() {
             />
           </div>
           <form
-            onSubmit={handleSubmit}
+            onSubmit={enviarDatos}
             className="flex flex-col gap-y-6 justify-between w-[80%] sm:w-[40%]"
           >
             <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-x-6 justify-between">
@@ -105,24 +109,21 @@ export default function CotizaSection() {
                   variant={"underlined"}
                   label="Nombre"
                   name="nombre"
-                  value={formState.nombre}
-                  onChange={handleChange}
+                  onChange={(e) => setNombre(e.target.value)}
                 />
                 <Input
                   type="text"
                   variant={"underlined"}
                   label="Celular"
                   name="celular"
-                  value={formState.celular}
-                  onChange={handleChange}
+                  onChange={(e) => setCelular(e.target.value)}
                 />
                 <Input
                   type="text"
                   variant={"underlined"}
                   label="Marca/Modelo/Año"
                   name="marcaModeloAno"
-                  value={formState.marcaModeloAno}
-                  onChange={handleChange}
+                  onChange={(e) => setCarro(e.target.value)}
                 />
               </div>
 
@@ -150,22 +151,16 @@ export default function CotizaSection() {
                 variant={"underlined"}
                 label="Motivo"
                 name="motivo"
-                value={formState.motivo}
-                onChange={handleChange}
+                onChange={(e) => setMotivo(e.target.value)}
               />
-              <Checkbox
-                size="sm"
-                color="warning"
-                defaultSelected
-                name="acepto"
-                checked={formState.acepto}
-                onChange={handleChange}
-              >
+              <Checkbox size="sm" color="warning" defaultSelected name="acepto">
                 Acepto que mis datos enviados se recopilen y se almacenen de
                 forma responsable.
               </Checkbox>
             </div>
-            <Button color="warning">Cotizar</Button>
+            <Button color="warning" type="submit">
+              Cotizar
+            </Button>
           </form>
         </div>
       </div>
