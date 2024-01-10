@@ -23,7 +23,7 @@ export default function Contact() {
   const enviarDatos = async (event: FormEvent) => {
     event.preventDefault();
 
-    const respuesta = await fetch("https://www.tallerescasafierros.co/api/mail", {
+    const respuesta = await fetch("/api/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,8 @@ export default function Contact() {
       }),
     });
 
-    console.log(respuesta);
+    const datos = await respuesta.json();
+    console.log(datos);
   };
 
   return (

@@ -35,15 +35,10 @@ export async function POST(req: NextRequest) {
   `,
   };
 
-  mailTransport
-    .sendMail(mailOptions)
-    .then(() => {
-      console.log("Email sent successfully");
-      return NextResponse.json({ message: body });
-    })
-    .catch((err: any) => {
-      console.log("Failed to send email");
-      console.error(err);
-      return NextResponse.json({ message: "Error", error: err });
-    });
+  try {
+    mailTransport.sendMail(mailOptions);
+    return NextResponse.json({ message: body });
+  } catch (e: any) {
+    return NextResponse.json({ error: e });
+  }
 }
