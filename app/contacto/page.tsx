@@ -23,7 +23,7 @@ export default function Contact() {
   const enviarDatos = async (event: FormEvent) => {
     event.preventDefault();
 
-    const respuesta = await fetch("/api/mail", {
+    const respuesta = await fetch("http://localhost:3000/api/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
