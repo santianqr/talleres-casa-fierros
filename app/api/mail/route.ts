@@ -20,8 +20,8 @@ export async function POST(req: NextRequest) {
   });
 
   const mailOptions = {
-    from: `atencion@tallerescasafierros.co`,
-    to: `atencion@tallerescasafierros.co`,
+    from: process.env.GODADDY_EMAIL,
+    to: process.env.GODADDY_EMAIL,
     subject: `Nueva opinión`,
     text: `Hola equipo de tallerescasafierros.co    
 
