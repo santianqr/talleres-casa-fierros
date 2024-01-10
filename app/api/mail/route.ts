@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
     port: 465,
     debug: true,
     auth: {
-      user: "atencion@tallerescasafierros.co",
-      pass: "Inar2023#",
+      user: process.env.GODADDY_EMAIL,
+      pass: process.env.GODADDY_PASSWORD,
     },
   });
 
