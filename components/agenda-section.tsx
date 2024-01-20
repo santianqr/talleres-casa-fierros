@@ -2,7 +2,7 @@
 
 import { FaCalendarAlt } from "react-icons/fa";
 import Calendar from "react-calendar";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import styled from "styled-components";
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
@@ -62,9 +62,84 @@ const CalendarContainer = styled.div`
     display: none;
   }
 `;
+type ValuePiece = Date | null;
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function AgendaSection() {
-  const [value, onChange] = useState(new Date());
+  const [value, onChange] = useState<ValuePiece | [ValuePiece, ValuePiece]>(
+    new Date()
+  );
+  const [nombre, setNombre] = useState("");
+  const [carro, setCarro] = useState("");
+  const [horario, setHorario] = useState("");
+  const [celular, setCelular] = useState("");
+  const [servicios, setServicios] = useState<string[]>([]);
+
+  const horarios: Record<string, string> = {
+    1: "07:00 - 07:30 am",
+    2: "07:30 - 08:00 am",
+    3: "08:00 - 08:30 am",
+    4: "08:30 - 09:00 am",
+    5: "09:00 - 09:30 am",
+    6: "09:30 - 10:00 am",
+    7: "10:00 - 10:30 am",
+    8: "10:30 - 11:00 am",
+    9: "11:00 - 11:30 am",
+    10: "11:30 - 12:00 pm",
+    11: "12:00 - 12:30 pm",
+    12: "12:30 - 1:00 pm",
+    13: "1:00 - 1:30 pm",
+    14: "1:30 - 2:00 pm",
+    15: "2:00 - 2:30 pm",
+    16: "2:30 - 3:00 pm",
+    17: "3:00 - 3:30 pm",
+    18: "3:30 - 4:00 pm",
+    19: "4:00 - 4:30 pm",
+    20: "4:30 - 5:00 pm",
+  };
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const horarioSeleccionado = horarios[event.target.value];
+    setHorario(horarioSeleccionado);
+  };
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      setServicios([...servicios, event.target.value]);
+    } else {
+      setServicios(
+        servicios.filter((service) => service !== event.target.value)
+      );
+    }
+  };
+
+  const enviarDatos = async (event: FormEvent) => {
+    event.preventDefault();
+
+    const respuesta = await fetch("/api/agenda", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nombre: nombre,
+        carro: carro,
+        horario: horario,
+        celular: celular,
+        servicios: JSON.stringify(servicios),
+        date: JSON.stringify(value),
+      }),
+    });
+
+    const datos = await respuesta.json();
+
+    if (datos.error) {
+      alert(datos.error);
+      console.log(datos.error);
+    } else {
+      alert("Email sent successfuly!");
+    }
+  };
 
   return (
     <section className="w-full py-4 px-6 flex justify-center">
@@ -79,28 +154,50 @@ export default function AgendaSection() {
           </div>
         </div>
 
-        <form className="flex flex-col items-center sm:flex-row pt-[5vw] ">
+        <form
+          className="flex flex-col items-center sm:flex-row pt-[5vw] "
+          onSubmit={enviarDatos}
+        >
           <div className="flex flex-col w-[80%] sm:w-[60%] gap-y-8">
             <Input
               type="text"
               variant={"underlined"}
               label="NOMBRE"
               placeholder="Nombre completo"
+              onChange={(e) => setNombre(e.target.value)}
             />
             <Input
               type="text"
               variant={"underlined"}
               label="TIPO DE CARRO"
               placeholder="Marca/Modelo/Año"
+              onChange={(e) => setCarro(e.target.value)}
+            />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="Numero de contacto"
+              placeholder=""
+              onChange={(e) => setCelular(e.target.value)}
             />
 
             <div className="flex flex-col sm:flex-row px-[0.8vw] w-[100%] items-start sm:justify-center gap-y-[3vh] sm:gap-x-[3vw]">
               <CheckboxGroup label="SERVICIOS" size="sm" color="warning">
-                <Checkbox value="mec-bas">Mecánica básica</Checkbox>
-                <Checkbox value="mec-esp">Mecánica especializada</Checkbox>
-                <Checkbox value="ele-aut">Electricidad automotriz</Checkbox>
-                <Checkbox value="lat-pin">Latoneria y pintura</Checkbox>
-                <Checkbox value="serv-esp">Servicios especiales</Checkbox>
+                <Checkbox value="mec-bas" onChange={handleCheckboxChange}>
+                  Mecánica básica
+                </Checkbox>
+                <Checkbox value="mec-esp" onChange={handleCheckboxChange}>
+                  Mecánica especializada
+                </Checkbox>
+                <Checkbox value="ele-aut" onChange={handleCheckboxChange}>
+                  Electricidad automotriz
+                </Checkbox>
+                <Checkbox value="lat-pin" onChange={handleCheckboxChange}>
+                  Latoneria y pintura
+                </Checkbox>
+                <Checkbox value="serv-esp" onChange={handleCheckboxChange}>
+                  Servicios especiales
+                </Checkbox>
               </CheckboxGroup>
               <Select
                 labelPlacement={"outside"}
@@ -108,35 +205,87 @@ export default function AgendaSection() {
                 label="HORARIO"
                 placeholder="Hora"
                 className="w-[50vw] sm:w-[10vw]"
+                value={horario}
+                onChange={handleSelectChange}
               >
-                <SelectItem key={1}>07:00 - 07:30 am</SelectItem>
-                <SelectItem key={2}>07:30 - 08:00 am</SelectItem>
-                <SelectItem key={3}>08:00 - 08:30 am</SelectItem>
-                <SelectItem key={4}>08:30 - 09:00 am</SelectItem>
-                <SelectItem key={5}>09:00 - 09:30 am</SelectItem>
-                <SelectItem key={6}>09:30 - 10:00 am</SelectItem>
-                <SelectItem key={7}>10:00 - 10:30 am</SelectItem>
-                <SelectItem key={8}>10:30 - 11:00 am</SelectItem>
-                <SelectItem key={9}>11:00 - 11:30 am</SelectItem>
-                <SelectItem key={10}>11:30 - 12:00 pm</SelectItem>
-                <SelectItem key={11}>12:00 - 12:30 pm</SelectItem>
-                <SelectItem key={12}>12:30 - 1:00 pm</SelectItem>
-                <SelectItem key={13}>1:00 - 1:30 pm</SelectItem>
-                <SelectItem key={14}>1:30 - 2:00 pm</SelectItem>
-                <SelectItem key={15}>2:00 - 2:30 pm</SelectItem>
-                <SelectItem key={16}>2:30 - 3:00 pm</SelectItem>
-                <SelectItem key={17}>3:00 - 3:30 pm</SelectItem>
-                <SelectItem key={18}>3:30 - 4:00 pm</SelectItem>
-                <SelectItem key={19}>4:00 - 4:30 pm</SelectItem>
-                <SelectItem key={20}>4:30 - 5:00 pm</SelectItem>
+                <SelectItem key={1} value={1}>
+                  07:00 - 07:30 am
+                </SelectItem>
+                <SelectItem key={2} value={2}>
+                  07:30 - 08:00 am
+                </SelectItem>
+                <SelectItem key={3} value={3}>
+                  08:00 - 08:30 am
+                </SelectItem>
+                <SelectItem key={4} value={4}>
+                  08:30 - 09:00 am
+                </SelectItem>
+                <SelectItem key={5} value={5}>
+                  09:00 - 09:30 am
+                </SelectItem>
+                <SelectItem key={6} value={6}>
+                  09:30 - 10:00 am
+                </SelectItem>
+                <SelectItem key={7} value={7}>
+                  10:00 - 10:30 am
+                </SelectItem>
+                <SelectItem key={8} value={8}>
+                  10:30 - 11:00 am
+                </SelectItem>
+                <SelectItem key={9} value={9}>
+                  11:00 - 11:30 am
+                </SelectItem>
+                <SelectItem key={10} value={10}>
+                  11:30 - 12:00 pm
+                </SelectItem>
+                <SelectItem key={11} value={11}>
+                  12:00 - 12:30 pm
+                </SelectItem>
+                <SelectItem key={12} value={12}>
+                  12:30 - 1:00 pm
+                </SelectItem>
+                <SelectItem key={13} value={13}>
+                  1:00 - 1:30 pm
+                </SelectItem>
+                <SelectItem key={14} value={14}>
+                  1:30 - 2:00 pm
+                </SelectItem>
+                <SelectItem key={15} value={15}>
+                  2:00 - 2:30 pm
+                </SelectItem>
+                <SelectItem key={16} value={16}>
+                  2:30 - 3:00 pm
+                </SelectItem>
+                <SelectItem key={17} value={17}>
+                  3:00 - 3:30 pm
+                </SelectItem>
+                <SelectItem key={18} value={18}>
+                  3:30 - 4:00 pm
+                </SelectItem>
+                <SelectItem key={19} value={19}>
+                  4:00 - 4:30 pm
+                </SelectItem>
+                <SelectItem key={20} value={20}>
+                  4:30 - 5:00 pm
+                </SelectItem>
               </Select>
             </div>
           </div>
           <div className="w-[95%] sm:w-[60%] flex flex-col items-center align-middle justify-between">
             <CalendarContainer>
-              <Calendar calendarType="gregory" />
+              <Calendar
+                calendarType="gregory"
+                value={value}
+                onChange={onChange}
+                selectRange={false}
+              />
             </CalendarContainer>
-            <Button color="warning" variant="solid" className="w-[50%]">
+            <Button
+              color="warning"
+              variant="solid"
+              className="w-[50%]"
+              type="submit"
+            >
               Agendar
             </Button>
           </div>

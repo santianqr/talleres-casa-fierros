@@ -1,44 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
-const nodemailer = require("nodemailer");
+import { EmailTemplate } from "@/components/email-template";
+import { Resend } from "resend";
 
-export async function POST(req: NextRequest) {
-  const body = await req.json();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const mailTransport = nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
-    secure: true,
-    secureConnection: false,
-    tls: {
-      ciphers: "SSLv3",
-    },
-    requireTLS: true,
-    port: 465,
-    debug: true,
-    auth: {
-      user: process.env.GODADDY_EMAIL,
-      pass: process.env.GODADDY_PASSWORD,
-    },
-  });
-
-  const mailOptions = {
-    from: process.env.GODADDY_EMAIL,
-    to: process.env.GODADDY_EMAIL,
-    subject: `Nueva opinión`,
-    text: `Hola equipo de tallerescasafierros.co    
-
-  Hemos recibido una nueva opinion!
-
-  ${body.nombre} con el correo electrónico ${body.correo} ha dicho:
-  ${body.mensaje} 
-
-  Talleres Casa Fierros
-  `,
-  };
-
+export async function POST(request: NextRequest) {
   try {
-    mailTransport.sendMail(mailOptions);
-    return NextResponse.json({ message: body });
-  } catch (e: any) {
-    return NextResponse.json({ error: e });
+    const body = await request.json();
+
+    const { data, error } = await resend.emails.send({
+      from: "Bot Casa Fierros <onboarding@resend.dev>",
+      to: ["atencion@tallerescasafierros.co"],
+      subject: "Nueva solicitud de contacto! ESCRIBIR YA!",
+      react: EmailTemplate({
+        name: body.nombre,
+        email: body.correo,
+        text: body.mensaje,
+      }) as React.ReactElement,
+    });
+
+    if (error) {
+      return NextResponse.json({ error });
+    }
+
+    return NextResponse.json({ data });
+  } catch (error) {
+    return NextResponse.json({ error });
   }
 }

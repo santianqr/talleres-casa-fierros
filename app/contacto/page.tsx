@@ -14,6 +14,7 @@ import { Button } from "@nextui-org/react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineSmartphone } from "react-icons/md";
 import { FormEvent, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [nombre, setNombre] = useState("");
@@ -36,7 +37,18 @@ export default function Contact() {
     });
 
     const datos = await respuesta.json();
-    console.log(datos);
+    //console.log(datos);
+    if (datos.error) {
+      alert(datos.error);
+      toast.error(datos.error);
+      console.log(datos.error);
+    } else {
+      alert("Email sent successfuly!");
+      toast.success("Email sent successfuly!");
+      setNombre("");
+      setCorreo("");
+      setMensaje("");
+    }
   };
 
   return (
@@ -69,7 +81,7 @@ export default function Contact() {
             </Link>
           </div>
         </div>
-        {/*<div className="w-[100%] flex justify-center">
+        <div className="w-[100%] flex justify-center">
           <GoogleMapsEmbed
             apiKey={process.env.GOOGLE_MAPS_API_KEY!}
             width={1024}
@@ -79,8 +91,8 @@ export default function Contact() {
             allowfullscreen
             loading="lazy"
             style="border-radius:1rem; max-width: 100%; max-height: 100%;"
-  />
-        </div>*/}
+          />
+        </div>
         <div className="w-full h-[15vh] flex flex-col items-center relative">
           <div className="w-full h-1/2 bg-yellow-500/[0.6] absolute top-0 z-10"></div>
           <Image

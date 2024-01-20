@@ -22,7 +22,7 @@ export default function PaymentMethods() {
           <p className="text-3xl sm:text-[5vh] font-bold">MEDIOS DE PAGO</p>
         </div>
         <div className="flex flex-row justify-between w-[100%] sm:w-[40%]">
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center">
             {icons.cash}
             <p className="font-bold">Efectivo</p>
           </div>

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { EmailTemplate } from "@/components/email-cotiza";
+import { EmailTemplate } from "@/components/email-agenda";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -16,8 +16,9 @@ export async function POST(req: NextRequest) {
         nombre: body.nombre,
         celular: body.celular,
         carro: body.carro,
-        motivo: body.motivo,
-        servicio: body.servicio,
+        horario: body.horario,
+        date: body.date,
+        servicios: body.servicios,
       }) as React.ReactElement,
     });
 

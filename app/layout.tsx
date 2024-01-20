@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`dark bg-background ${average.variable} ${outfit.variable}`}
+        className={`dark bg-background text-white ${average.variable} ${outfit.variable}`}
       >
         <Providers>
           <HeaderPage />

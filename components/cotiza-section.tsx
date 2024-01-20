@@ -6,6 +6,7 @@ import { Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 import { ChangeEvent, FormEvent, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function CotizaSection() {
   const [nombre, setNombre] = useState("");
@@ -22,14 +23,14 @@ export default function CotizaSection() {
     event.preventDefault();
 
     const serviciosSeleccionados = {
-      "mec-bas": mecBas,
-      "mec-esp": mecEsp,
-      "ele-aut": eleAut,
-      "lat-pin": latPin,
-      "serv-esp": servEsp,
+      "mecanica-basica": mecBas,
+      "mecanica-esp": mecEsp,
+      "electricidad-automotriz": eleAut,
+      "latoneria-pintura": latPin,
+      "servicios-especiales": servEsp,
     };
 
-    const respuesta = await fetch("/api/mail", {
+    const respuesta = await fetch("/api/cotiza", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,12 +40,20 @@ export default function CotizaSection() {
         celular: celular,
         carro: carro,
         motivo: motivo,
-        servicio: serviciosSeleccionados,
+        servicio: JSON.stringify(serviciosSeleccionados),
       }),
     });
 
     const datos = await respuesta.json();
     console.log(datos);
+    if (datos.error) {
+      alert(datos.error);
+      toast.error(datos.error);
+      console.log(datos.error);
+    } else {
+      alert("Email sent successfuly!");
+      toast.success("Email sent successfuly!");
+    }
   };
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
