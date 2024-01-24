@@ -59,7 +59,7 @@ export default function Footer() {
             {/* <p>Trabaja con nosotros</p>*/}
             <br />
             <p>Horario de atención</p>
-            <p>Luves - Viernes/7am - 5pm</p>
+            <p>Lunes - Viernes/7am - 5pm</p>
             <p>Sabados /8am-3pm</p>
           </div>
 

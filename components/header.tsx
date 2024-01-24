@@ -22,7 +22,19 @@ import { useState } from "react";
 export default function HeaderPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = ["Perfil", "Log Out"];
+  const menuItems = [
+    { name: "Inicio", route: "/" },
+    { name: "Servicios", route: "/servicios" },
+    { name: "Nosotros", route: "/nosotros" },
+  ];
+
+  const services = [
+    { name: "Mecanica Básica", route: "/servicios" },
+    { name: "Mecanica Especializada", route: "/servicios" },
+    { name: "Electricidad Automotriz", route: "/servicios" },
+    { name: "Latoneria y Pintura", route: "/servicios" },
+    { name: "Servicios Especiales", route: "/servicios" },
+  ];
 
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
@@ -72,14 +84,22 @@ export default function HeaderPage() {
               base: "gap-4",
             }}
           >
-            <DropdownItem>Mecanica Básica</DropdownItem>
-            <DropdownItem>Mecanica Especializada</DropdownItem>
-            <DropdownItem>Electricidad Automotriz</DropdownItem>
-            <DropdownItem>Latoneria y Pintura</DropdownItem>
-            <DropdownItem>Servicios Especiales</DropdownItem>
+            {services.map((service, index) => (
+              <DropdownItem key={index}>
+                <Link href={service.route}>
+                  <a
+                    onClick={() =>
+                      localStorage.setItem("selectedService", service.name)
+                    }
+                    className="text-foreground hover:text-yellow-500"
+                  >
+                    {service.name}
+                  </a>
+                </Link>
+              </DropdownItem>
+            ))}
           </DropdownMenu>
         </Dropdown>
-
         {/*<NavbarItem>
           <Link color="foreground" className="hover:text-yellow-500" href="#">
             Blog
@@ -140,20 +160,14 @@ export default function HeaderPage() {
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
               className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
+              color="foreground" // Aquí asignamos el mismo color a todos los elementos
+              href={item.route} // Aquí asignamos la ruta correspondiente a cada elemento
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
