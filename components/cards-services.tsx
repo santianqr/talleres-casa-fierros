@@ -32,8 +32,8 @@ export default function CardsServices() {
           </CardBody>
           <Divider />
           <CardFooter>
-            <Link isExternal showAnchorIcon href="/servicios">
-              Ver más en Servicios
+            <Link href="/servicios">
+              <p className="text-yellow-500/[0.6]">Ver más en Servicios</p>
             </Link>
           </CardFooter>
         </Card>
@@ -56,8 +56,8 @@ export default function CardsServices() {
           </CardBody>
           <Divider />
           <CardFooter>
-            <Link isExternal showAnchorIcon href="/servicios">
-              Ver más en Servicios
+            <Link href="/servicios">
+              <p className="text-yellow-500/[0.6]">Ver más en Servicios</p>
             </Link>
           </CardFooter>
         </Card>
@@ -76,8 +76,8 @@ export default function CardsServices() {
           </CardBody>
           <Divider />
           <CardFooter>
-            <Link isExternal showAnchorIcon href="/servicios">
-              Ver más en Servicios
+            <Link href="/servicios">
+              <p className="text-yellow-500/[0.6]">Ver más en Servicios</p>
             </Link>
           </CardFooter>
         </Card>
@@ -88,7 +88,6 @@ export default function CardsServices() {
           <Divider />
           <CardBody className="text-sm ">
             <ul className="list-disc list-outside ml-6">
-              <li></li>
               <li>Banco de enderezado</li>
               <li>Laboratorio de pintura</li>
               <li>Cambio de color</li>
@@ -96,8 +95,8 @@ export default function CardsServices() {
           </CardBody>
           <Divider />
           <CardFooter>
-            <Link isExternal showAnchorIcon href="/servicios">
-              Ver más en Servicios
+            <Link href="/servicios">
+              <p className="text-yellow-500/[0.6]">Ver más en Servicios</p>
             </Link>
           </CardFooter>
         </Card>
@@ -120,9 +119,9 @@ export default function CardsServices() {
             </ul>
           </CardBody>
           <Divider />
-          <CardFooter>
-            <Link isExternal showAnchorIcon href="/servicios">
-              Ver más en Servicios
+          <CardFooter className="">
+            <Link href="/servicios">
+              <p className="text-yellow-500/[0.6]">Ver más en Servicios</p>
             </Link>
           </CardFooter>
         </Card>
