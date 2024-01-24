@@ -1,4 +1,3 @@
-import AboutSection from "@/components/about-section";
 import CarroSection from "@/components/carro-section";
 import PrefSection from "@/components/pref-section";
 import AgendaSection from "@/components/agenda-section";
@@ -12,7 +11,6 @@ export default function Home() {
     <main>
       <Carouselv2 />
       <CardsServices />
-      <AboutSection />
       <CarroSection />
       <PrefSection />
       <AgendaSection />

@@ -14,6 +14,8 @@ import { Button } from "@nextui-org/react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineSmartphone } from "react-icons/md";
 import { FormEvent, useState } from "react";
+import AboutSection from "@/components/about-section";
+
 import toast from "react-hot-toast";
 
 export default function Contact() {
@@ -64,6 +66,8 @@ export default function Contact() {
             className="object-contain"
           />
         </div>
+        <AboutSection />
+
         <div className="flex flex-row justify-end w-full gap-x-4">
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl ">
             <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr">
