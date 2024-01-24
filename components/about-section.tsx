@@ -26,7 +26,7 @@ export default function AboutSection() {
                 tecnológica.
               </p>
             </div>
-
+            {/*
             <Button
               href="/contacto"
               as={Link}
@@ -36,7 +36,7 @@ export default function AboutSection() {
               className="mx-auto sm:mx-0 w-1/2 px-6"
             >
               Más Información
-            </Button>
+  </Button>*/}
           </div>
           <div className="hidden sm:relative sm:flex sm:items-center sm:justify-center sm:h-[100%] sm:w-[45%]">
             <Image

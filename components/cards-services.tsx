@@ -109,7 +109,6 @@ export default function CardsServices() {
           <Divider />
           <CardBody className="text-sm ">
             <ul className="list-disc list-outside ml-6">
-              <li></li>
               <li>Embellecimiento</li>
               <li>Cerámico</li>
               <li>Revisión pre-tecnomecánica</li>
