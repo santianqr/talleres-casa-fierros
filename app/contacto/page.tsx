@@ -43,7 +43,7 @@ export default function Contact() {
       toast.error(datos.error);
       console.log(datos.error);
     } else {
-      alert("Email sent successfuly!");
+      alert("Tu contacto ha sido enviado!");
       toast.success("Email sent successfuly!");
       setNombre("");
       setCorreo("");
@@ -71,7 +71,7 @@ export default function Contact() {
             </Link>
           </div>
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-            <Link href="#">
+            <Link href="https://www.facebook.com/tcasafierros">
               <FaFacebookF />
             </Link>
           </div>
@@ -162,7 +162,7 @@ export default function Contact() {
                 <p className="px-2">
                   324 582 7230
                   <br />
-                  350780050
+                  350 780 0050
                 </p>
               </div>
               <div className="flex flex-row items-center">
@@ -176,7 +176,7 @@ export default function Contact() {
               <p className="font-bold">
                 Horario de
                 <br />
-                atencion
+                atención
               </p>
               <p>
                 Lunes-Viernes/ 7am-5pm <br />

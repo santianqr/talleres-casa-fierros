@@ -71,18 +71,18 @@ export default function Footer() {
                 </Link>
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <Link href="#">
+                <Link href="https://www.facebook.com/tcasafierros">
                   <FaFacebookF />
                 </Link>
               </div>
               <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-                <Link href="#">
+                <Link href="https://wa.me/+573507800050">
                   <FaWhatsapp />
                 </Link>
               </div>
             </div>
             <p className="text-sm">
-              <span>®</span> 2023 Talleres Casa Fierros
+              <span>®</span> 2024 Talleres Casa Fierros
             </p>
           </div>
         </div>

@@ -51,7 +51,7 @@ export default function CotizaSection() {
       toast.error(datos.error);
       console.log(datos.error);
     } else {
-      alert("Email sent successfuly!");
+      alert("Cotización enviada! En breve te contactaremos.");
       toast.success("Email sent successfuly!");
     }
   };

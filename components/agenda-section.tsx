@@ -137,7 +137,7 @@ export default function AgendaSection() {
       alert(datos.error);
       console.log(datos.error);
     } else {
-      alert("Email sent successfuly!");
+      alert("Agendamiento enviado! Te contactaremos para confirmarlo.");
     }
   };
 
