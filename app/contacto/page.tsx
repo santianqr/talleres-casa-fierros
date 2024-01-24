@@ -76,7 +76,7 @@ export default function Contact() {
             </Link>
           </div>
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-            <Link href="#">
+            <Link href="https://wa.me/+573507800050">
               <FaWhatsapp />
             </Link>
           </div>

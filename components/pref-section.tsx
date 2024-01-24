@@ -22,7 +22,7 @@ export default function PrefSection() {
             </li>
           </ul>
           <Button
-            href="https://github.com/nextui-org/nextui"
+            href="/servicios"
             as={Link}
             color="warning"
             showAnchorIcon

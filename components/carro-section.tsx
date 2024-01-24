@@ -18,7 +18,7 @@ export default function CarroSection() {
         </div>
         <div className="flex flex-col sm:flex sm:flex-row sm:w-[60%] sm:justify-between gap-y-6 sm:px-6">
           <div className="flex flex-col gap-2 items-center">
-            <p className="font-bold text-2xl">15</p>
+            <p className="font-bold text-6xl">15</p>
             <div className="flex flex-row gap-2 items-center">
               <FaTools />
               <p className="text-sm">
@@ -29,7 +29,7 @@ export default function CarroSection() {
             </div>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <p className="font-bold text-2xl">1020</p>
+            <p className="font-bold text-6xl">1020</p>
             <div className="flex flex-row gap-2 items-center">
               <FaTools />
               <p className="text-sm">
@@ -40,7 +40,7 @@ export default function CarroSection() {
             </div>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <p className="font-bold text-2xl">20</p>
+            <p className="font-bold text-6xl">20</p>
             <div className="flex flex-row gap-2 items-center">
               <FaTools />
               <p className="text-sm">

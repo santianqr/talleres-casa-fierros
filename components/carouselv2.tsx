@@ -25,8 +25,8 @@ export default function Carouselv2() {
       <div className="max-w-[1024px] w-[100%] bg-yellow-300 relative">
         <div>
           <Image src={images[page]} alt="" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/4 h-1/4">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+          <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] h-[40%]">
             <Image alt="" src={'/logo_letters.webp'} fill objectFit="contain"/>
           </div>
         </div>
