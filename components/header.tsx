@@ -25,7 +25,7 @@ export default function HeaderPage() {
   const menuItems = [
     { name: "Inicio", route: "/" },
     { name: "Servicios", route: "/servicios" },
-    { name: "Nosotros", route: "/nosotros" },
+    { name: "Contacto", route: "/contacto" },
   ];
 
   const services = [

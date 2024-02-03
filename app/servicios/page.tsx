@@ -1,7 +1,8 @@
-"use client";
-import React from "react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+//"use client";
+
+//import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
+import CardsServices from "@/components/cards-services";
 
 export default function Servicios() {
   const size = 24;
@@ -11,7 +12,7 @@ export default function Servicios() {
   return (
     <>
       <main className="w-full py-4 px-6 flex justify-center">
-        <div className="max-w-[1024px] w-[100%]">
+        <div className="max-w-[1024px] w-[100%] space-y-10">
           <section>
             <p className="text-center text-[5vh] text-yellow-500 pb-4">
               SERVICIOS
@@ -55,7 +56,8 @@ export default function Servicios() {
             </div>
           </section>
           <section>
-            <Accordion selectionMode="multiple" showDivider={false}>
+            <CardsServices />
+            {/*<Accordion selectionMode="multiple" showDivider={false}>
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
@@ -462,7 +464,7 @@ export default function Servicios() {
                   </AccordionItem>
                 </Accordion>
               </AccordionItem>
-            </Accordion>
+            </Accordion> */}
           </section>
         </div>
       </main>

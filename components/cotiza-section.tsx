@@ -79,7 +79,7 @@ export default function CotizaSection() {
   };
 
   return (
-    <section className="w-full py-4 px-6 flex justify-center">
+    <section className="w-full py-4 px-6 flex justify-center mt-12 sm:mt-20">
       <div className="max-w-[1024px] w-[100%] ">
         <div className="flex flex-row items-center justify-between">
           <div className="relative w-[20%] sm:w-[50%]">

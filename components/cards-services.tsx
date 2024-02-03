@@ -12,8 +12,8 @@ import React from "react";
 export default function CardsServices() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <Card className="max-w-[400px]">
+      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center">
+        <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Mecánica Básica</p>
           </CardHeader>
@@ -38,7 +38,7 @@ export default function CardsServices() {
           </CardFooter>
         </Card>
 
-        <Card className="max-w-[400px]">
+        <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Mecánica especializada</p>
           </CardHeader>
@@ -61,7 +61,7 @@ export default function CardsServices() {
             </Link>
           </CardFooter>
         </Card>
-        <Card className="max-w-[400px]">
+        <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Electricidad automotriz</p>
           </CardHeader>
@@ -81,7 +81,7 @@ export default function CardsServices() {
             </Link>
           </CardFooter>
         </Card>
-        <Card className="max-w-[400px]">
+        <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Latoneria y pintura</p>
           </CardHeader>
@@ -101,7 +101,7 @@ export default function CardsServices() {
           </CardFooter>
         </Card>
 
-        <Card className="max-w-[400px]">
+        <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Servicios especiales</p>
           </CardHeader>

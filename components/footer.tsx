@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="w-full py-4 px-6 flex justify-center">
       <div className="max-w-[1024px] w-[100%] border-t-1 border-t-yellow-500 flex flex-col sm:flex-row gap-x-4 items-center">
-        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center px-4 gap-4">
+        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center px-4 gap-4 mt-4 sm:mt-6">
           <Image
             src={"/logo_color.png"}
             alt=""
@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center pt-8 px-4 gap-4">
+        <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] items-center px-4 gap-4 justify-center mt-4 sm:mt-6">
           <div className="text-sm">
             <Link href={"/"}>
               <p>Inicio</p>
@@ -60,7 +60,7 @@ export default function Footer() {
             <br />
             <p>Horario de atención</p>
             <p>Lunes - Viernes/7am - 5pm</p>
-            <p>Sabados /8am-3pm</p>
+            <p>Sábados /8am-3pm</p>
           </div>
 
           <div className="flex flex-col gap-y-4">

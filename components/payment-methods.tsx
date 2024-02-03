@@ -16,7 +16,7 @@ export default function PaymentMethods() {
   };
 
   return (
-    <section className="w-full py-4 px-6 flex justify-center">
+    <section className="w-full py-4 px-6 flex justify-center mt-12 sm:mt-20">
       <div className="max-w-[1024px] w-[100%] flex flex-col items-center gap-y-16">
         <div className="bg-yellow-500/[0.6] text-center py-4 px-4 w-[100%]">
           <p className="text-3xl sm:text-[5vh] font-bold">MEDIOS DE PAGO</p>

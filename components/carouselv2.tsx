@@ -21,7 +21,7 @@ export default function Carouselv2() {
   };
 
   return (
-    <section className="w-full py-4 px-6 flex justify-center">
+    <section className="w-full py-4 px-6 flex justify-center mt-8">
       <div className="max-w-[1024px] w-[100%] bg-yellow-300 relative">
         <div>
           <Image src={images[page]} alt="" />
