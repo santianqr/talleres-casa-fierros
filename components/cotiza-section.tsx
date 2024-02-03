@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { GoogleMapsEmbed } from "@next/third-parties/google";
 import { Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
+import GoogleMaps from "./google-maps";
 
 export default function CotizaSection() {
   const [nombre, setNombre] = useState("");
@@ -95,18 +95,7 @@ export default function CotizaSection() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between mt-12 gap-6 items-center">
-          <div className="w-[90%] sm:w-[40%] flex justify-center">
-            <GoogleMapsEmbed
-              apiKey={process.env.GOOGLE_MAPS_API_KEY!}
-              height={400}
-              width={400}
-              mode="place"
-              q="Talleres Casa Fierros, Calle 161a, Bogotá"
-              allowfullscreen
-              loading="lazy"
-              style="border-radius:1rem; max-width: 100%; max-height: 100%;"
-            />
-          </div>
+          <GoogleMaps />
           <form
             onSubmit={enviarDatos}
             className="flex flex-col gap-y-6 justify-between w-[80%] sm:w-[40%]"

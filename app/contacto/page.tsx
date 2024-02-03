@@ -87,7 +87,7 @@ export default function Contact() {
         </div>
         <div className="w-[100%] flex justify-center">
           <GoogleMapsEmbed
-            apiKey={process.env.GOOGLE_MAPS_API_KEY!}
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
             width={1024}
             height={500}
             mode="place"
