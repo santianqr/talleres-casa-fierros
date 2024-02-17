@@ -16,7 +16,7 @@ export default function CarroSection() {
             className=" "
           />
         </div>
-        <div className="flex flex-col sm:flex sm:flex-row sm:w-[60%] sm:justify-between gap-y-6 sm:px-6">
+        <div className="flex flex-col sm:flex-row sm:w-[60%] sm:justify-between gap-y-6 sm:px-6">
           <div className="flex flex-col gap-2 items-center">
             <p className="font-bold text-4xl">15</p>
             <div className="flex flex-row gap-2 items-center">
