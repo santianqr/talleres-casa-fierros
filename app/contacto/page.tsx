@@ -57,7 +57,7 @@ export default function Contact() {
         <div className="relative w-full">
           <Image
             alt=""
-            src={"/IMAGEN-CON-LINEAS.png"}
+            src={"/IMAGEN-CON-LINEAS.webp"}
             height={100}
             width={1024}
             className="object-contain"

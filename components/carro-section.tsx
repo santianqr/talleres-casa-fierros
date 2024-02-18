@@ -8,7 +8,7 @@ export default function CarroSection() {
         <div className="hidden sm:block sm:relative sm:w-[35%] sm:h-[30vh]">
           <Image
             alt="..."
-            src={"/medio_carro.png"}
+            src={"/medio_carro.webp"}
             fill
             style={{
               objectFit: "cover", // cover, contain, none

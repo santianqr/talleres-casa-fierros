@@ -1,12 +1,12 @@
 import { Cash, Card, WireTransfer } from "./icons_v1";
 import { Chip } from "@nextui-org/react";
 import Image from "next/image";
-import daviplata from "@/public/payment-methods/logo-daviplata.png";
-import bancolombia from "@/public/payment-methods/logo-grupo-bancolombia.png";
-import nequi from "@/public/payment-methods/logo-nequi.png";
-import pse from "@/public/payment-methods/pse.png";
-import visa from "@/public/payment-methods/visa.png";
-import mastercard from "@/public/payment-methods/mastercard.png";
+import daviplata from "@/public/payment-methods/logo-daviplata.webp";
+import bancolombia from "@/public/payment-methods/logo-grupo-bancolombia.webp";
+import nequi from "@/public/payment-methods/logo-nequi.webp";
+import pse from "@/public/payment-methods/pse.webp";
+import visa from "@/public/payment-methods/visa.webp";
+import mastercard from "@/public/payment-methods/mastercard.webp";
 
 export default function PaymentMethods() {
   const icons = {

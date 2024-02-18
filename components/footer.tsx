@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-[1024px] w-[100%] border-t-1 border-t-yellow-500 flex flex-col sm:flex-row gap-x-4 items-center gap-y-4 sm:gap-x-0">
         <div className="flex flex-col sm:flex-row w-[100%] sm:w-[50%] justify-between items-center px-4 gap-4 mt-4 sm:mt-6">
           <Image
-            src={"/logo_color.png"}
+            src={"/logo_color.webp"}
             alt=""
             height={140}
             width={140}

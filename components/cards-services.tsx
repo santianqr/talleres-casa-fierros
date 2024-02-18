@@ -358,7 +358,7 @@ export default function CardsServices() {
         <div className="relative bg-background self-center">
           <Image
             alt=""
-            src={"/ICONO-CARRO-AMARILLO.png"}
+            src={"/ICONO-CARRO-AMARILLO.webp"}
             width={700}
             height={200}
             objectFit="contain"

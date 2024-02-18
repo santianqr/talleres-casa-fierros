@@ -87,7 +87,7 @@ export default function CotizaSection() {
               COTIZA YA
             </p>
             <div className="relative w-10 h-[4vh]">
-              <Image src={"/ICONO-Cotiza ya.png"} fill alt="" />
+              <Image src={"/ICONO-Cotiza ya.webp"} fill alt="" />
             </div>
           </div>
         </div>

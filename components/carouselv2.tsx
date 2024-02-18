@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import carousel1 from "@/public/carousel/CARRUSEL1.jpg";
-import carousel2 from "@/public/carousel/CARRUSEL2.jpg";
-import carousel3 from "@/public/carousel/CARRUSEL3.jpg";
-import carousel4 from "@/public/carousel/CARRUSEL4.jpg";
-import carousel5 from "@/public/carousel/CARRUSEL5.jpg";
+import carousel1 from "@/public/carousel/CARRUSEL1.webp";
+import carousel2 from "@/public/carousel/CARRUSEL2.webp";
+import carousel3 from "@/public/carousel/CARRUSEL3.webp";
+import carousel4 from "@/public/carousel/CARRUSEL4.webp";
+import carousel5 from "@/public/carousel/CARRUSEL5.webp";
 
 const images = [carousel1, carousel2, carousel3, carousel4, carousel5];
 
