@@ -70,17 +70,17 @@ export default function Contact() {
 
         <div className="flex flex-row justify-end w-full gap-x-4">
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl ">
-            <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr">
+            <Link href="https://instagram.com/tallerescasafierros?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank">
               <AiFillInstagram />
             </Link>
           </div>
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-            <Link href="https://www.facebook.com/tcasafierros">
+            <Link href="https://www.facebook.com/tcasafierros" target="_blank">
               <FaFacebookF />
             </Link>
           </div>
           <div className="flex items-center justify-center w-11 h-11 border-2 border-white rounded-full text-3xl">
-            <Link href="https://wa.me/+573507800050">
+            <Link href="https://wa.me/+573507800050" target="_blank">
               <FaWhatsapp />
             </Link>
           </div>

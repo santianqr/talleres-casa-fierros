@@ -3,8 +3,8 @@ import { FaTools } from "react-icons/fa";
 
 export default function CarroSection() {
   return (
-    <section className="w-full py-4 px-6 flex justify-center mt-20">
-      <div className="max-w-[1024px] w-[100%] flex flex-col sm:flex-row justify-between items-center bg-yellow-500/[0.6] gap-y-2 sm:gap-y-0 py-4">
+    <section className="w-full px-6 flex justify-center mt-20">
+      <div className="max-w-[1024px] w-[100%] flex flex-col sm:flex-row justify-between items-center bg-yellow-500/[0.6] gap-y-2 sm:gap-y-0">
         <div className="hidden sm:block sm:relative sm:w-[35%] sm:h-[30vh]">
           <Image
             alt="..."
@@ -13,7 +13,6 @@ export default function CarroSection() {
             style={{
               objectFit: "contain", // cover, contain, none
             }}
-            className=" "
           />
         </div>
         <div className="flex flex-col md:flex-row sm:w-[60%] justify-center gap-y-6 sm:gap-x-8 sm:px-6 ">

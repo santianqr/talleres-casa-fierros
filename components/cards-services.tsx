@@ -9,6 +9,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import Image from "next/image";
 
 export default function CardsServices() {
   return (
@@ -19,7 +20,7 @@ export default function CardsServices() {
             <p className="text-md font-bold ">Mecánica Básica</p>
           </CardHeader>
           <Divider />
-          <CardBody className="text-sm ">
+          <CardBody className="text-sm">
             <Accordion isCompact>
               <AccordionItem
                 key="1"
@@ -233,6 +234,7 @@ export default function CardsServices() {
             </Accordion>
           </CardBody>
         </Card>
+
         <Card className="max-w-[400px] w-full">
           <CardHeader className="">
             <p className="text-md font-bold ">Latoneria y pintura</p>
@@ -345,6 +347,16 @@ export default function CardsServices() {
             </Accordion>
           </CardBody>
         </Card>
+
+        <div className="relative bg-background self-center">
+          <Image
+            alt=""
+            src={"/ICONO-CARRO-AMARILLO.png"}
+            width={700}
+            height={200}
+            objectFit="contain"
+          />
+        </div>
       </div>
     </section>
   );
