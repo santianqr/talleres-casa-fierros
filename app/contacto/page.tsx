@@ -16,7 +16,6 @@ import { MdOutlineSmartphone } from "react-icons/md";
 import { FormEvent, useState } from "react";
 import AboutSection from "@/components/about-section";
 
-import toast from "react-hot-toast";
 
 export default function Contact() {
   const [nombre, setNombre] = useState("");
@@ -42,11 +41,9 @@ export default function Contact() {
     //console.log(datos);
     if (datos.error) {
       alert(datos.error);
-      toast.error(datos.error);
       console.log(datos.error);
     } else {
       alert("Tu contacto ha sido enviado!");
-      toast.success("Email sent successfuly!");
       setNombre("");
       setCorreo("");
       setMensaje("");

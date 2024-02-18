@@ -5,7 +5,6 @@ import { Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 import { ChangeEvent, FormEvent, useState } from "react";
-import toast from "react-hot-toast";
 import GoogleMaps from "./google-maps";
 
 export default function CotizaSection() {
@@ -48,11 +47,9 @@ export default function CotizaSection() {
     console.log(datos);
     if (datos.error) {
       alert(datos.error);
-      toast.error(datos.error);
       console.log(datos.error);
     } else {
       alert("Cotización enviada! En breve te contactaremos.");
-      toast.success("Email sent successfuly!");
     }
   };
 
