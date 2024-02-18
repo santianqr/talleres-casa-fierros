@@ -9,7 +9,7 @@ export default function PrefSection() {
           <h2 className="font-bold text-lg sm:text-2xl">
             ¿POR QUÉ PREFERIRNOS?
           </h2>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside text-left">
             <li className="text-sm sm:text-base">
               Garantizamos un excelente servicio al cliente.
             </li>
@@ -21,16 +21,15 @@ export default function PrefSection() {
               Equipos de la más alta calidad humana y tecnológica.
             </li>
           </ul>
-          <Button
-            href="/servicios"
-            as={Link}
-            color="warning"
-            showAnchorIcon
-            variant="solid"
-            className="mx-auto sm:mx-0 w-1/2 px-6"
-          >
-            Más Información
-          </Button>
+          <Link href="/servicios">
+            <Button
+              color="warning"
+              variant="solid"
+              className="mx-auto sm:mx-0 w-1/2 px-6"
+            >
+              Más Información
+            </Button>
+          </Link>
         </div>
         <div className="w-[80%] sm:w-[50%] bg-red-500">
           <YoutubeVideo />

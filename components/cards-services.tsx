@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function CardsServices() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8 justify-items-center ">
         <Card className="max-w-[400px] w-full">
           <CardHeader className="space-x-2 text-yellow-500">
             <BiSolidCarMechanic size={16} />
