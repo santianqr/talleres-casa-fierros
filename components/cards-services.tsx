@@ -12,11 +12,11 @@ import Image from "next/image";
 export default function CardsServices() {
   return (
     <section className="w-full py-4 px-6 flex justify-center">
-      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center">
+      <div className="max-w-[1024px] w-[100%] grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <Card className="max-w-[400px] w-full">
-          <CardHeader className="space-x-2">
+          <CardHeader className="space-x-2 text-yellow-500">
             <BiSolidCarMechanic size={16} />
-            <p className="text-md font-bold ">Mecánica Básica</p>
+            <p className="text-md font-bold">Mecánica Básica</p>
           </CardHeader>
           <Divider />
           <CardBody className="text-sm">
@@ -106,7 +106,7 @@ export default function CardsServices() {
         </Card>
 
         <Card className="max-w-[400px] w-full">
-          <CardHeader className="space-x-2">
+          <CardHeader className="space-x-2 text-yellow-500">
             <GiMechanicGarage size={16} />
 
             <p className="text-md font-bold ">Mecánica especializada</p>
@@ -190,7 +190,7 @@ export default function CardsServices() {
         </Card>
 
         <Card className="max-w-[400px] w-full">
-          <CardHeader className="space-x-2">
+          <CardHeader className="space-x-2 text-yellow-500">
             <MdOutlineElectricBolt size={16} />
 
             <p className="text-md font-bold ">Electricidad automotriz</p>
@@ -239,7 +239,7 @@ export default function CardsServices() {
         </Card>
 
         <Card className="max-w-[400px] w-full">
-          <CardHeader className="space-x-2">
+          <CardHeader className="space-x-2 text-yellow-500">
             <FaPaintRoller size={16} />
 
             <p className="text-md font-bold ">Latoneria y pintura</p>
@@ -278,7 +278,7 @@ export default function CardsServices() {
         </Card>
 
         <Card className="max-w-[400px] w-full">
-          <CardHeader className="space-x-2">
+          <CardHeader className="space-x-2 text-yellow-500">
             <IoCarSport size={16} />
 
             <p className="text-md font-bold ">Servicios especiales</p>
@@ -359,9 +359,9 @@ export default function CardsServices() {
           <Image
             alt=""
             src={"/ICONO-CARRO-AMARILLO.webp"}
-            width={700}
+            width={1000}
             height={200}
-            objectFit="contain"
+            
           />
         </div>
       </div>
