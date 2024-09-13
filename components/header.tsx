@@ -18,6 +18,7 @@ import {
 import { TCFlogo } from "./tcf-logo";
 import { ChevronDown } from "./icons";
 import { useState } from "react";
+import { FaPhone } from "react-icons/fa";
 
 export default function HeaderPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,6 +114,11 @@ export default function HeaderPage() {
           >
             Contacto
           </Link>
+        </NavbarItem>
+        <NavbarItem className="flex flex-row space-x-2 items-center">
+          <FaPhone className="text-foreground-500"/>
+          <p className="text-foreground-500">Programe su cita</p>
+          <p>+57 350 7800050</p>
         </NavbarItem>
         {/*<NavbarItem>
           <Link color="foreground" className="hover:text-yellow-500" href="#">
