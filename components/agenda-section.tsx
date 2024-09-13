@@ -142,7 +142,10 @@ export default function AgendaSection() {
   };
 
   return (
-    <section className="w-full py-4 px-6 flex justify-center mt-12 sm:mt-20">
+    <section
+      className="w-full py-4 px-6 flex justify-center mt-12 sm:mt-20"
+      id="agenda-section"
+    >
       <div className="max-w-[1024px] w-[100%]">
         <div className="flex flex-row gap-x-4 py-2 items-center">
           <p className="text-3xl sm:text-[5vh] font-bold">AGENDA</p>

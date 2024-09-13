@@ -19,6 +19,7 @@ import { TCFlogo } from "./tcf-logo";
 import { ChevronDown } from "./icons";
 import { useState } from "react";
 import { FaPhone } from "react-icons/fa";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 export default function HeaderPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,7 +117,7 @@ export default function HeaderPage() {
           </Link>
         </NavbarItem>
         <NavbarItem className="flex flex-row space-x-2 items-center">
-          <FaPhone className="text-foreground-500"/>
+          <FaPhone className="text-foreground-500" />
           <p className="text-foreground-500">Programe su cita</p>
           <p>+57 350 7800050</p>
         </NavbarItem>
@@ -151,6 +152,13 @@ export default function HeaderPage() {
           </DropdownMenu>
           </Dropdown>*/}
       </NavbarContent>
+      <Link href="#agenda-section">
+        <div className="flex flex-row items-center space-x-2 cursor-pointer text-foreground-600">
+          <FaRegArrowAltCircleRight />
+          <p>Reserve su cita</p>
+        </div>
+      </Link>
+
       {/*<NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex ">
           <Link href="#" className="text-yellow-500">

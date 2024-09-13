@@ -13,7 +13,7 @@ export default function Home() {
       <ServicesHome />
       <CarroSection />
       <PrefSection />
-      <AgendaSection />
+      <AgendaSection/>
       <CotizaSection />
       <PaymentMethods />
     </main>
