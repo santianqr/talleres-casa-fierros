@@ -40,7 +40,6 @@ export default function Carouselv2() {
             <Link
               href="https://wa.me/+573507800050?text=Hola%20quiero%20solicitar%20un%20servicio"
               target="_blank"
-              rel="noopener noreferrer"
             >
               <Button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex items-center">
                 <FaWhatsapp className="mr-2" />
