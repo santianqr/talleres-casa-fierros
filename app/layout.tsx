@@ -4,6 +4,8 @@ import "./globals.css";
 import Providers from "@/app/providers";
 import HeaderPage from "@/components/header";
 import Footer from "@/components/footer";
+import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 const average = Average({
   subsets: ["latin"],
@@ -37,6 +39,13 @@ export default function RootLayout({
           <HeaderPage />
           {children}
           <Footer />
+          <Link
+            href="https://wa.me/+573507800050"
+            target="_blank"
+            className="fixed bottom-5 right-5 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors"
+          >
+            <FaWhatsapp size={70}/>
+          </Link>
         </Providers>
       </body>
     </html>
