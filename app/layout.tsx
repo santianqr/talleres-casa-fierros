@@ -40,7 +40,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <Link
-            href="https://wa.me/+573507800050"
+            href="https://wa.me/+573507800050?text=Hola%20quiero%20solicitar%20un%20servicio"
             target="_blank"
             className="fixed bottom-5 right-5 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors"
           >
